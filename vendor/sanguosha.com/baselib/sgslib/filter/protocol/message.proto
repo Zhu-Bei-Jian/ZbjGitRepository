@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package protocol;
+
+message Client_FilterReq {
+    string content = 1;
+}
+
+message Data{
+    repeated string keyword = 1;
+    string newText = 2;
+}
+
+message Server_FilterResp{
+    int32 code = 1;
+    Data data = 2;
+    string msg = 3;
+}

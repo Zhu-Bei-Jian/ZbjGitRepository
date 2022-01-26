@@ -1,0 +1,19 @@
+{
+  "name":"logserver1",
+  "develop": false,
+  "db": "nuyan:HI2C93MoS28h4ynz@tcp(rm-bp1673k70vj8asecl.mysql.rds.aliyuncs.com:3306)/sgs_wx_log?charset=utf8&parseTime=True&loc=Local",
+  "log": {
+        "name":"nuyan_logserver",
+        "level": 5,
+        "outputs": {
+          "file": {
+            "path": "./logs",
+            "rotate": true,
+            "json": true
+          }
+        }
+  },
+  "nats":{
+    "address":"nats://127.0.0.1:4222"
+  }
+}

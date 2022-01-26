@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package db;
+import "sanguosha.com/sgs_herox/proto/def/def.proto";
+//角色其它信息
+message CharInfo{
+    //玩家属性
+    int32 icon = 1;//头像
+    int32 iconEdge = 2;//头像框
+
+    //统计数据
+    int32 onlineSecToday = 20;//当天在线时间
+    int64 onlineSecTotal = 21;//总的在线时间
+    int32 loginDayCnt = 22;//总的登录天数
+    int32 c11LoginDayCnt = 23;//连接登录的天数
+    int64 lastLoginTime = 24;//上次登入时间
+    int64 lastLogoutTime = 25;//上次登出时间
+
+    int64 lastResetTime = 30;//上次重置的时间点
+
+    bool init = 51;
+
+    //当日胜负数据统计
+    int32 curDayWinCountText = 60;
+    int32 curDayLoseCountText = 61;
+    int32 curDayWinCountVoice = 62;
+    int32 curDayLoseCountVoice = 63;
+
+    //总体胜负数据统计
+    int32 winCountText = 100;
+    int32 loseCountText = 101;
+    int32 winCountVoice = 110;
+    int32 loseCountVoice = 111;
+    repeated Score score = 120;
+
+    repeated gamedef.CardGroup cardGroups = 121 ;
+    int32 nowUseId = 122;
+}
+
+//道具
+message DBProp{
+    repeated Int64KV props = 1;
+    repeated Int64KV consumes = 2;//道具消耗记录，目前支付货币和消耗品
+}
+
+//隐藏分
+message Score{
+    int32 ScoreType = 1;
+    repeated Int32KV score = 2;
+}
+
+message Int32KV{
+    int32 key = 1;
+    int32 v = 2;
+}
+
+
+message Int64KV{
+    int64 key = 1;
+    int64 v = 2;
+}
+

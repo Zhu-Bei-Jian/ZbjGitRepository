@@ -1,0 +1,204 @@
+{
+    "masters": {
+        "master": {
+            "id": 1,
+            "type": 1,
+            "addr": "10.225.10.194:4000",
+            "slweights": {},
+            "shiftload": 5,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            }
+        }
+    },
+    "slaves": {
+        "gate": {
+            "id": 201,
+            "type": 2,
+            "addr": "0.0.0.0:8000",
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "auth": {
+            "id": 301,
+            "type": 3,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "lobby": {
+            "id": 401,
+            "type": 4,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "entity": {
+            "id": 501,
+            "type": 5,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "game": {
+            "id": 601,
+            "type": 6,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "business": {
+            "id": 701,
+            "type": 7,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+			"disableCrypto": true
+        },
+        "email": {
+            "id": 801,
+            "type": 8,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        },
+        "aisrv": {
+            "id": 901,
+            "type": 9,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        },
+        "friend": {
+            "id": 1001,
+            "type": 10,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        },
+        "admin": {
+            "id": 1101,
+            "type": 11,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        },
+        "shop": {
+            "id": 1201,
+            "type": 12,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        },
+        "pay": {
+            "id": 1301,
+            "type": 13,
+            "log": {
+                "level": 5,
+                "outputs": {
+                    "file": {
+                        "path": "./logs",
+                        "rotate": true,
+                        "json": true
+                    }
+                }
+            },
+            "disableCrypto": true
+        }
+    }
+}

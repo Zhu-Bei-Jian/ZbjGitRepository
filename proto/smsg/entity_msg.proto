@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package smsg;
+
+import "sanguosha.com/sgs_herox/proto/gameconf/game_type.proto";
+import "sanguosha.com/sgs_herox/proto/def/def.proto";
+
+//请求玩家信息
+message AllEnReqUserInfo{
+    enum UserDataTyp {
+        UDTInvalid = 0;
+        UDTUser = 1; //角色
+        UDTProp = 2;//道具列表
+    }
+
+    uint64 userid = 2;
+    repeated UserDataTyp dataTypes = 3;
+}
+
+message AllEnRespUserInfo{
+    enum ErrCode{
+        Invalid = 0;
+        GetUserError = 1;
+    }
+    int64 seqid = 1;
+    uint64 userid = 2;
+    ErrCode errCode = 3;
+    UserDataContent  data = 4;
+}
+
+message UserDataContent{
+    User user = 1;
+}
+
+message User{
+    gamedef.UserBrief userBrief = 1;
+
+    bool isOnline = 11;//是否在线
+    int32 status = 12;//状态
+
+    string loginIP = 15;//登录的ip
+    string thirdAccountId = 16;//登录渠道的账号Id
+    int64 createTime = 17;//账号创建日期
+    int64 registerTime = 20;//注册时间
+    string registerIP = 21;//注册IP
+    int64 loginTime = 22;//上次登录时间
+    int64 logoutTime = 24;//上次登出时间
+    int64 bornTime = 25;//出生时间
+
+    int32 continueLoginDayCnt = 33;//连续登录天数
+    int32 loginDayCnt = 34;//总登录天数
+    int64 onlineSec = 36;//在线时间
+    int32 onlineSecToday = 37;//今日在线时间
+
+    gamedef.CardGroup cardGroup =38;//玩家当前所使用的卡组
+}

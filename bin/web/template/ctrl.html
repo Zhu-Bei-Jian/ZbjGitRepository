@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<head>
+    <link href="depend/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript" src="depend/lib/jquery/jquery-1.9.0.min.js" ></script>
+    <script src="depend/lib/ligerUI/js/ligerui.min.js" type="text/javascript"></script>
+    <script src="js/cvi_busy_lib.js" type="text/javascript"></script>
+    <script src="depend/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div class="indiv">
+        <input type="submit" class="button" value="所有人下线" onclick="KickAll()" ></input>
+    </div>
+    <div class="indiv">
+        <input type="submit" class="button" value="所有人下线，结束所有游戏" onclick="Silence()" ></input>
+    </div>
+    <div class="indiv">
+        <input type="submit" class="button" value="关闭Gate服" onclick="CloseGate()" ></input>
+    </div>
+    <div class="indiv">
+        <input type="submit" class="button" value="关闭所有服（AI服除外）" onclick="CloseAll()" ></input>
+    </div>
+    <div class="indiv">
+        <input type="submit" class="button" value="开启Gate消息统计" onclick="StartGateRecord()" ></input>
+    </div>
+    <div class="indiv">
+        <input type="submit" class="button" value="关闭并获取Gate消息统计" onclick="StopGateRecord()" ></input>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function KickAll(obj) {
+        $.ligerDialog.confirm("确认：所有人下线", function (yes) {
+            if (yes.toString() == "true"){
+                ctrl = getBusyOverlay("viewport");
+                $.post("/v9/KickAll",  {}, function(ret){
+                    try {ctrl.remove(); delete ctrl;} catch(e) {}
+                    alert(ret.Reason);
+                },"json")
+            }
+        });
+    }
+    function Silence(obj) {
+        $.ligerDialog.confirm("确认：所有人下线，结束所有游戏", function (yes) {
+            if (yes.toString() == "true"){
+                ctrl = getBusyOverlay("viewport");
+                $.post("/v9/Silence",  {}, function(ret){
+                    try {ctrl.remove(); delete ctrl;} catch(e) {}
+                    alert(ret.Reason);
+                },"json")
+            }
+        });
+    }
+    function CloseGate(obj) {
+        $.ligerDialog.confirm("确认：关闭Gate服", function (yes) {
+            if (yes.toString() == "true"){
+                ctrl = getBusyOverlay("viewport");
+                $.post("/v9/CloseServer",  {"optType":"gate"}, function(ret){
+                    try {ctrl.remove(); delete ctrl;} catch(e) {}
+                    alert(ret.Reason);
+                },"json")
+            }
+        });
+    }
+    function CloseAll(obj) {
+        $.ligerDialog.confirm("确认：关闭所有服（AI服除外）", function (yes) {
+            if (yes.toString() == "true"){
+                ctrl = getBusyOverlay("viewport");
+                $.post("/v9/CloseServer",  {"optType":"all"}, function(ret){
+                    try {ctrl.remove(); delete ctrl;} catch(e) {}
+                    alert(ret.Reason);
+                },"json")
+            }
+        });
+    }
+    function StartGateRecord(obj) {
+        $.post("/v9/monitorGateMsg",  {"optType":"start"}, function(ret){
+            alert(ret.Reason);
+        },"json")
+    }
+
+    function StopGateRecord(obj) {
+        url = "/v9/monitorGateMsg?optType=stop";
+        window.open(url)
+        //$.get("/v9/monitorGateMsg",  {"optType":"stop"}, function(ret){
+
+        // })
+        //$.download()
+    }
+</script>
+</html>

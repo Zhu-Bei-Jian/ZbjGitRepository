@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<head>
+    <link href="depend/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript" src="depend/lib/jquery/jquery-1.9.0.min.js" ></script>
+    <script src="depend/lib/ligerUI/js/ligerui.min.js" type="text/javascript"></script>
+    <script src="js/cvi_busy_lib.js" type="text/javascript"></script>
+    <script src="depend/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div class="indiv">
+        <form data-type="formAction" id ="formQueryRawToContent">
+            <table>
+                <tr>
+                    <td>字段</td><td><input type="text" name="column" style="width:300px" value="" id="uidQueryRawToContent"></input></td>
+                </tr>
+                <tr>
+                    <td>RAW</td><td><textarea  type="text" name="data" style="width:900px;height:100px" value="" id="raw"></textarea></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="indiv">
+        <div>
+            <tr><input type="submit" class="button" value="RAW-->内容" onclick="QueryRawToContent()" /> </tr>
+            <tr><input type="submit" class="button" value="Base64Unzip" onclick="QueryZipRawToContent()" /> </tr>
+        </div>
+    </div>
+    <div class="indiv">
+        <form data-type="formAction" id ="formQueryContentToRaw">
+            <table>
+                <tr>
+                    <td>字段</td><td><input type="text" name="column" style="width:300px" value="" id="uidQueryContentToRaw"></input></td>
+                </tr>
+                <tr>
+                    <td>内容</td><td><textarea  type="text" name="data" style="width:900px;height:300px" value="" id="content"></textarea></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="indiv">
+        <div>
+            <tr><input type="submit" class="button" value="内容-->RAW new" onclick="QueryContentToRaw()" /> </tr>
+            <tr><input type="submit" class="button" value="ZipBase64" onclick="QueryContentToZipRaw()" /> </tr>
+        </div>
+    </div>
+    <div class="indiv">
+        <table>
+            <tr>
+                <td>RAW</td><td><textarea  type="text" name="data" style="width:900px;height:200px" value="" id="rawNew"></textarea></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function QueryRawToContent(obj) {
+        $("#content").val("");
+        $("#uidQueryContentToRaw").val("")
+        ctrl = getBusyOverlay("viewport");
+        var formobj =  document.getElementById("formQueryRawToContent");
+        $.post("/v9/QueryRawToContent"
+            , $(formobj).serialize()
+            , function(ret){
+                try {ctrl.remove(); delete ctrl;} catch(e) {}
+                $("#content").val(ret);
+                $("#uidQueryContentToRaw").val($("#uidQueryRawToContent").val());
+            })
+    }
+    function QueryZipRawToContent(obj) {
+        $("#content").val("");
+        $("#uidQueryContentToRaw").val("")
+        ctrl = getBusyOverlay("viewport");
+        var formobj =  document.getElementById("formQueryRawToContent");
+        $.post("/v9/QueryZipRawToContent"
+            , $(formobj).serialize()
+            , function(ret){
+                try {ctrl.remove(); delete ctrl;} catch(e) {}
+                $("#content").val(ret);
+                $("#uidQueryContentToRaw").val($("#uidQueryRawToContent").val());
+            })
+    }
+    function QueryContentToRaw(obj) {
+        $("#rawNew").val("")
+        ctrl = getBusyOverlay("viewport");
+        var formobj =  document.getElementById("formQueryContentToRaw");
+        $.post("/v9/QueryContentToRaw"
+            , $(formobj).serialize()
+            , function(ret){
+                try {ctrl.remove(); delete ctrl;} catch(e) {}
+                $("#rawNew").val(ret)
+            })
+    }
+
+    function QueryContentToZipRaw(obj) {
+        $("#rawNew").val("")
+        ctrl = getBusyOverlay("viewport");
+        var formobj =  document.getElementById("formQueryContentToRaw");
+        $.post("/v9/QueryContentToZipRaw"
+            , $(formobj).serialize()
+            , function(ret){
+                try {ctrl.remove(); delete ctrl;} catch(e) {}
+                $("#rawNew").val(ret)
+            })
+    }
+</script>
+</html>

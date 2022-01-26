@@ -1,0 +1,17 @@
+pkgname="models"
+output="gameshared/models"
+debug=false
+no-hooks=true
+no-tests=false
+no-auto-timestamps=false
+no-context=true
+
+[mysql]
+dbname="sgs_nuyan"
+host="10.225.10.194"
+port=3306
+user="root"
+pass="xu2009"
+sslmode="false"
+schema="sgs_wx"
+whitelist=["auth"]

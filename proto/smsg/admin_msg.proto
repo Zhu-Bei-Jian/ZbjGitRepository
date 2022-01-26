@@ -1,0 +1,224 @@
+syntax = "proto3";
+
+package smsg;
+import "sanguosha.com/sgs_herox/proto/gameconf/game_type.proto";
+import "sanguosha.com/sgs_herox/proto/def/def.proto";
+
+//加道具请求
+message PuEnAddProp{
+    enum OptType{
+        AddProp = 0;//加道具并减道具
+        AddPropOnly = 1;//只加道具
+        SubProp = 2;//加道具并扣道具
+        SubPropOnly = 3;//只扣道具
+        ShopBuy = 4;//商城购买（和AddProp功能相同，为了区分而加）
+    }
+    OptType optType = 3;
+    repeated gameconf.PropPack itemsAdd = 4;//要加的道具组
+    repeated gameconf.PropPack itemsSub = 5;//要扣的道具组
+    bool forceHideEffect = 6;//隐藏获得提示
+    int32 buyID = 7;//如果是购买，购买项的唯一ID
+    int32 shopTab = 13; // 如果是购买, 购买项的商城类型
+    int32 buyNum = 8;//购买的数量
+    string buyName = 9;//购买物品的名称
+    int32 why = 10;
+    string getID = 12;
+}
+
+message PuEnRespAddProp{
+    enum ErrCode{
+        Invalid = 0;
+        ErrSystem = 1;
+        ErrSubPropNotEnough = 2;
+        ErrUserError = 3;
+        ErrPackageFull = 4;
+        ErrAddPropNotExist = 5;//加的物品不存在
+        ErrItemAlreadyOwned = 6;//物品已拥有（目前皮肤和英雄不可重复购买）
+        ErrSubItem = 7;//扣除道具失败
+    }
+    ErrCode errCode = 3;
+    string errMsg = 4;
+    repeated gameconf.PropPack get = 5;
+}
+
+//加道具请求（一次加多个）
+message PuEnReqBatchAddProp{
+    message Item{
+        int32 why = 1;
+        repeated gameconf.PropPack itemsAdd = 2;//要加的道具组
+    }
+    repeated Item addList = 3;
+}
+
+message PuEnRespBatchAddProp{
+    enum ErrCode{
+        Invalid = 0;
+        UserNotExist = 1;
+        PackageFull = 2;
+    }
+    ErrCode errCode = 3;
+    repeated gameconf.PropPack get = 4;
+}
+
+enum ChangeUserDataTyp{
+    CUDInvalid = 0;
+    CUDDelItem= 1;//删除道具
+}
+
+message DelUserItem{
+    int32 propType = 1;
+    int32 propID = 2;
+    int32 num = 3;
+    bool delAll = 4;
+}
+
+
+message ReqQueryBackup{
+    int64 timetag = 3;
+}
+message RespQueryBackup {
+    uint32 errCode = 3;
+    string backup = 4;
+}
+
+message AdEnReqChangeUserData{
+    ChangeUserDataTyp type = 3;
+    DelUserItem delUserItem = 4;
+}
+
+message AdEnRespChangeUserData{
+    enum ErrCode{
+        Invalid = 0;
+        ParamError = 1;//参数有误
+    }
+    ErrCode errCode = 3;
+    string errMsg = 4;
+}
+
+//请求重载配置
+message AdAllReqReload{
+}
+
+message AdAllRespReload{
+    enum ErrCode{
+        Invalid = 0;
+        ReloadErr = 1;
+    }
+    ErrCode errCode = 3;
+    string errMsg = 4;
+}
+
+message AdAllReqCloseServer{
+}
+
+message AdAllRespCloseServer{
+    enum ErrCode{
+        Invalid = 0;
+        CloseErr = 1;
+    }
+    ErrCode errCode = 3;
+    string errMsg = 4;
+}
+
+
+//GM命令类型
+enum GMType{
+    GMTInvalid = 0;
+    GMTAccountLock = 1;
+    GMTChatLock = 2;
+}
+
+
+//admin对其它服务器发出的命令
+message AdAllReqGMCommand{
+    message Lock{
+        repeated uint64 userIDs = 1;
+        bool isLock = 2;
+        int64 time = 3;
+    }
+    GMType gmtype = 3;
+    Lock lock = 4;
+}
+
+message AdAllRespGMCommand{
+    enum ErrCode{
+        Invalid = 0;
+        LoadUserError = 1;
+        GMTypeNotExist = 2;
+    }
+    message Lock {
+        repeated uint64 userIDs = 1;
+    }
+    ErrCode errCode = 3;
+    string errMsg = 4;//错误消息
+    GMType gmtype = 5;
+    Lock lock = 6;
+}
+
+//通知Gate踢出玩家
+message AllGaNtfKickUserOut{
+    bool kickAll = 1;//是否踢出所有玩家
+    repeated uint64 userIds = 2;//如果不是踢出所有玩家，则踢出这些玩家
+    gameconf.KickUserOutReason reason = 3;
+}
+
+
+message AdAllReqMetrics{
+    int64 reqTime = 3;
+}
+
+message AdAllRespMetrics{
+    enum MetricsType{
+        Invalid = 0;
+        OnlineCount = 1;//在线人数
+        GameCount = 2;//游戏数量
+        RoomCount = 3;//房间数量
+    }
+
+    message Metrics{
+        MetricsType key = 1;
+        int32 value = 2;
+    }
+
+    repeated Metrics metrics = 1;
+    int64 reqTime = 2;
+}
+
+//GM监控协议
+message AsAllReqMSGMonitor{
+    enum Type{
+        Invalid = 0;
+        Gate_StartRECReq = 1;//开始记录请求次数
+        Gate_StopGetRECReq = 2;//停止记录并取回请求次数记录
+
+        Gate_PrintSlowResponse = 3;//打印消息响应的慢日志
+        Gate_PrintUserMsgInOut = 4;//打印玩家消息进出日志
+        All_PrintUserMsgDetail = 5;//打印服务器收到玩家消息的详细信息
+
+        All_StopPrint  = 10;//停止打印
+    }
+
+    Type type = 1;
+    uint64 userId = 2;
+    int32 slowerThan = 3;//SlowResponse的阈值
+}
+
+message AsAllRespMSGMonitor{
+    enum ErrCode{
+        Invalid = 0;
+        GMTypeNotExist = 1;
+    }
+
+    message RECReqResult{
+        int32 gateServerId = 1;
+        int64 startTime = 2;
+        int64 endTime = 3;
+        map<string,int64> msgs = 4;//gatemsg的收集器
+        int32 startUserCount = 5;//gatemsg启动时在线人数
+        int32 endUserCount = 6;//gatemsg结束时在线人数
+    }
+
+    ErrCode errCode = 1;
+    string errMsg = 2;
+    RECReqResult RECResult = 3;
+}
