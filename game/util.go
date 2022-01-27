@@ -2,15 +2,16 @@ package game
 
 import (
 	"fmt"
+	"net"
+	"strconv"
+	"strings"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/sirupsen/logrus"
 	"github.com/wanghuiyt/ding"
-	"net"
 	"sanguosha.com/sgs_herox/gameutil"
 	"sanguosha.com/sgs_herox/proto/cmsg"
 	gamedef "sanguosha.com/sgs_herox/proto/def"
-	"strconv"
-	"strings"
 )
 
 //工具文件
@@ -443,6 +444,27 @@ func IsZbj() bool {
 
 }
 
+func IsTest() bool {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		fmt.Println(err)
+		return false
+	}
+	for _, address := range addrs {
+		// 检查ip地址判断是否回环地址
+		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				//fmt.Println(ipnet.IP.String())
+				if ipnet.IP.String() == "10.225.254.248" {
+					return true
+				}
+			}
+		}
+	}
+	return false
+
+}
+
 func DingSendMsgTestToTakeMyLord(info string) {
 
 	(&ding.Webhook{
@@ -461,10 +483,17 @@ func (p *GameBase) DingSendMsg(info string) {
 			Secret:      "SEC64d0d6b7ee4fccb9e69ff18432b91b5bf176adbe6cabc8c2492b345e50ac997e",
 			EnableAt:    true,
 		}).SendMessage(info, at...)
-	} else {
+	} else if IsTest() {
 		(&ding.Webhook{
 			AccessToken: "86871fa45f066b38b6d0b779f5cb151b0221bd0f8311ad194006c095576b4b56",
 			Secret:      "SECd97a494654ad4d8ab939ae496a28b491784ca2dc7253b1b769487456a31dd26b",
+			EnableAt:    true,
+		}).SendMessage(info, at...)
+	} else {
+		//https://oapi.dingtalk.com/robot/send?access_token=40ddd5547d060e773756a3748350f9002799ead669181319c1f559e72a9c9fba
+		(&ding.Webhook{
+			AccessToken: "40ddd5547d060e773756a3748350f9002799ead669181319c1f559e72a9c9fba",
+			Secret:      "SEC8985298d5292f34289424e1184be6d0176f3f6ff45229b81782e25b25794b11c",
 			EnableAt:    true,
 		}).SendMessage(info, at...)
 	}
