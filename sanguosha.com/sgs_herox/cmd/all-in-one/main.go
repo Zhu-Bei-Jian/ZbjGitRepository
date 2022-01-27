@@ -3,14 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/sirupsen/logrus"
 	_ "net/http/pprof"
+	"sync"
+
+	"github.com/sirupsen/logrus"
 	"sanguosha.com/baselib/appframe"
 	"sanguosha.com/baselib/appframe/master"
 	"sanguosha.com/baselib/framework/netcluster"
 	"sanguosha.com/baselib/log"
 	"sanguosha.com/baselib/util"
-	"sanguosha.com/sgs_herox/account"
 	"sanguosha.com/sgs_herox/admin"
 	"sanguosha.com/sgs_herox/auth"
 	"sanguosha.com/sgs_herox/entity"
@@ -18,7 +19,6 @@ import (
 	"sanguosha.com/sgs_herox/gameutil"
 	"sanguosha.com/sgs_herox/gate"
 	"sanguosha.com/sgs_herox/lobby"
-	"sync"
 )
 
 var (
@@ -219,20 +219,6 @@ func main() {
 			app.Run()
 		}()
 	}
-
-	wg.Add(1)
-	util.SafeGo(func() {
-		defer wg.Done()
-		app, err := appframe.NewApplication(*netconfigFile, findOneNode(accountName))
-		if err != nil {
-			logrus.WithField("name", accountName).WithError(err).Panic("New account app fail")
-		}
-		err = account.InitSvr(app, *appconfigFile)
-		if err != nil {
-			logrus.WithField("name", accountName).WithError(err).Panic("Init account server fail")
-		}
-		app.Run()
-	})
 
 	// admin
 	wg.Add(1)
