@@ -25,12 +25,12 @@ entity_nodes:
 # 敏感词过滤服务器地址, 如果配置为 "null", 则不进行过滤
 #words_filter: "null"
 words_filter: "http://filterword.sanguosha.com:50000/v1/query?"
-
+#12 31
 mq:
   public:
     type: "kafka"
     address: ["10.225.254.248:9092"]
-    open: true
+    open: false
 
 kafka:
   report:
