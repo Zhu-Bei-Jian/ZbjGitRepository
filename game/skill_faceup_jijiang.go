@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	gamedef "sanguosha.com/sgs_herox/proto/def"
 	"sanguosha.com/sgs_herox/proto/gameconf"
 )
@@ -13,7 +12,7 @@ type SkillJiJiang struct {
 }
 
 func (ss *SkillJiJiang) CanUse() ([]*Card, error) {
-	selectCardType := gamedef.SelectCardType_Any
+	selectCardType := gamedef.SelectCardType_OtherMyOwn
 	selectCount := int32(1)
 	//没有可选牌，直接视为 放弃发动机会，但仍会翻面
 	if !hasSelectCard(ss.card, selectCardType) {
@@ -51,11 +50,6 @@ func (ss *SkillJiJiang) OnFaceUp(card *Card) {
 		t := cd
 		ss.PostActStream(func() {
 			StartGetBuff(t, ss.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, card)
-		})
-		ss.PostActStream(func() {
-			t.attack += 2
-			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v 受到激将加成。攻击力+2", t.GetOwnInfo()))
-			SyncChangeAttack(t, t.attack-2, t.attack, t)
 		})
 
 	}

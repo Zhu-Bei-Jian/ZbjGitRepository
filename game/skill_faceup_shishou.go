@@ -8,9 +8,7 @@ type SkillShiShou struct {
 }
 
 func (s *SkillShiShou) OnFaceUp(card *Card) {
-	var expireV int32 = 3 * 2
-	if card.owner.game.roundCount%2 == 0 {
-		expireV--
-	}
+	g := card.owner.game
+	expireV := g.GetBuffCfg(s.GetBuffId0()).GetExpireV() * 2
 	AddCampBuff(card, s.GetBuffId0(), gameconf.ExpireTyp_ETRound, expireV)
 }

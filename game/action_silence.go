@@ -29,7 +29,7 @@ func (ad *ActionSilence) DoSilence() {
 	ad.PostActStream(func() {
 		buffs := card.BuffManager.Buffs()
 		for _, v := range buffs { // 触发卡牌上面所有buff的onDisable ，驱散buff效果
-			buff, ok := NewBuff(v.buffCfg)
+			buff, ok := newBuff(v.buffCfg)
 			if !ok {
 				continue
 			}

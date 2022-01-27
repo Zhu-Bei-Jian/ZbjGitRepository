@@ -25,7 +25,7 @@ func (ss *BuffShiShou) TriggerHandler() []TriggerHandler {
 			}
 			for _, v := range ac.player.Camp.buffs { //每有一个 失守buff，军营受伤+3
 				if v.buffCfg.BuffID == ss.GetBuffId() {
-					ac.damage += 3
+					ac.damage += ss.GetCfg().BuffDamage
 				}
 			}
 

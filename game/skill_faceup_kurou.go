@@ -8,12 +8,11 @@ type SkillKuRou struct {
 }
 
 func (s *SkillKuRou) OnFaceUp(card *Card) {
-	//card := cell.Card
-	card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v 发动苦肉：翻牌技，对自己造成12点伤害。", card.GetOwnInfo()))
 	g := card.GetPlayer().game
+	g.GetCurrentPlayer().Log(fmt.Sprintf("%v 发动 %v", card.GetOwnInfo(), s.skillCfg.GetDesc()))
 	g.PostActData(s)
 	s.PostActStream(func() {
-		actDamage := NewActionDamageCard(g, card, card, nil, 12, s.GetSkillId())
+		actDamage := NewActionDamageCard(g, card, card, nil, s.GetValue(1), s.GetSkillId())
 		actDamage.DoDamage()
 	})
 }

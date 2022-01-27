@@ -27,7 +27,11 @@ func (ss *BuffZhiChi) TriggerHandler() []TriggerHandler {
 				var recoverValue int32 = 0
 				for _, v := range ac.srcCard.buffs {
 					if v.buffCfg.BuffID == ss.GetBuffId() {
-						recoverValue += 3
+
+						if ok {
+							recoverValue += v.buffCfg.GetBuffHP()
+						}
+
 					}
 				}
 				oldHP := ac.srcCard.GetHP()
@@ -39,14 +43,13 @@ func (ss *BuffZhiChi) TriggerHandler() []TriggerHandler {
 				if !ok {
 					return
 				}
-
-				if !ac.srcCard.HasBuff(ss.GetBuffId()) {
+				var bf *buff
+				if bf, ok = ac.srcCard.GetBuff(ss.GetBuffId()); ok {
 					return
 				}
 
-				//ac.srcCard.hp += 3
 				oldHP := ac.srcCard.GetHP()
-				ac.srcCard.AddHP(3)
+				ac.srcCard.AddHP(bf.buffCfg.GetBuffHP())
 				SyncChangeHP(ac.srcCard, oldHP, ac.srcCard.GetHP(), nil, ss.GetBuffId())
 				g.GetCurrentPlayer().Log(fmt.Sprintf("%v 触发智迟,实际恢复%v血", ac.srcCard.GetOwnInfo(), ac.srcCard.GetHP()-oldHP))
 

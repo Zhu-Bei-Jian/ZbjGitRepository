@@ -41,7 +41,9 @@ func (ss *SkillJieMing) OnFaceUp(card *Card) {
 	if ss.targetCards == nil {
 		return
 	}
+	g := card.owner.game
+	cfg := g.GetBuffCfg(ss.GetBuffId0())
 	for _, v := range ss.targetCards {
-		StartGetBuff(v, ss.GetBuffId0(), gameconf.ExpireTyp_ETTimes, 1, card)
+		StartGetBuff(v, ss.GetBuffId0(), gameconf.ExpireTyp_ETTimes, cfg.GetExpireV(), card)
 	}
 }

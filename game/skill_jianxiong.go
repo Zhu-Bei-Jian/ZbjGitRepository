@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	"sanguosha.com/sgs_herox/game/core"
 	"sanguosha.com/sgs_herox/proto/gameconf"
 )
@@ -32,7 +31,6 @@ func (ss *SkillJianXiong) TriggerHandler() []TriggerHandler {
 				return
 			}
 			ac.card.owner.game.PostActData(ss)
-			g.GetCurrentPlayer().Log(fmt.Sprintf("触发被动技：%v", ss.skillCfg.Name))
 
 			for _, cells := range g.board.cells {
 				tCells := cells
@@ -44,13 +42,8 @@ func (ss *SkillJianXiong) TriggerHandler() []TriggerHandler {
 					if tCell.Card.owner != ac.card.owner {
 						continue
 					}
-					tCell.Card.attack++
 					ss.PostActStream(func() {
 						StartGetBuff(tCell.Card, ss.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, ac.card)
-					})
-					ss.PostActStream(func() {
-						SyncChangeAttack(tCell.Card, tCell.Card.attack-1, tCell.Card.attack, ac.card)
-						g.GetCurrentPlayer().Log(fmt.Sprintf("%v受到奸雄加成，攻击力+1", tCell.heroCfg.Name))
 					})
 
 				}

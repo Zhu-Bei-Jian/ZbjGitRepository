@@ -31,12 +31,10 @@ func (ss *SkillJiAng) TriggerHandler() []TriggerHandler {
 			if len(targets) == 0 {
 				return
 			}
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v：激昂触发,对%v后方的卡牌造成3点伤害", ac.srcCard.GetOwnInfo(), ac.targetCard.GetOwnInfo()))
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v：激昂触发,对%v后方的卡牌造成%v点伤害", ac.srcCard.GetOwnInfo(), ac.targetCard.GetOwnInfo(), ss.GetValue(1)))
 			t := targets[0]
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 受到来自孙策的3点伤害", t.GetOwnInfo()))
 
 			g.PostActData(ss)
-
 			ss.PostActStream(func() {
 				card := ac.srcCard
 				skill, ok := NewSkill(card.skillCfg)
@@ -53,7 +51,7 @@ func (ss *SkillJiAng) TriggerHandler() []TriggerHandler {
 				g.StartWaitingNone(1, nil)
 			})
 			ss.PostActStream(func() {
-				NewActionDamageCard(ac.srcCard.owner.game, t, ac.srcCard, ac.srcCard.owner, 3, ss.GetSkillId()).DoDamage()
+				NewActionDamageCard(ac.srcCard.owner.game, t, ac.srcCard, ac.srcCard.owner, ss.GetValue(1), ss.GetSkillId()).DoDamage()
 			})
 
 		},

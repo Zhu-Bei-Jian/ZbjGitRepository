@@ -8,6 +8,14 @@ type BuffAtkAndHp struct {
 	HeroBuff
 }
 
+func (ss *BuffAtkAndHp) SetAttack(attack int32) {
+	ss.attack = attack
+}
+
+func (ss *BuffAtkAndHp) SetHP(hp int32) {
+	ss.hp = hp
+}
+
 func (ss *BuffAtkAndHp) OnEnable(card *Card) {
 
 	if ss.hp > 0 {

@@ -62,7 +62,7 @@ func (ss *SkillXingShang) TriggerHandler() []TriggerHandler {
 				})
 
 				actionData.PostActStream(func() {
-					NewActionDamageCard(g, enemy[randIndex], caoPi, nil, 5, ss.GetSkillId()).DoDamage()
+					NewActionDamageCard(g, enemy[randIndex], caoPi, nil, g.GetBuffCfg(ss.GetBuffId0()).BuffDamage, ss.GetSkillId()).DoDamage()
 				})
 
 			}

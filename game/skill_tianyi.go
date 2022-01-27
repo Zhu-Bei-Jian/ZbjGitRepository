@@ -27,9 +27,9 @@ func (ss *SkillTianYi) TriggerHandler() []TriggerHandler {
 			if !taiShiCi.HasSkill(ss.GetSkillId()) {
 				return
 			}
-			ac.extraRetDamage -= 2
+			ac.extraRetDamage -= ss.GetValue(1)
 
-			g.GetCurrentPlayer().Log(fmt.Sprintf("太史慈 触发被动技：%v, 受到%v的反击伤害-2", ss.skillCfg.Name, ac.targetCard.heroCfg.Name))
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 触发天义, 受到%v的反击伤害-%v", taiShiCi.GetOwnInfo(), ac.targetCard.GetOwnInfo(), ss.GetValue(1)))
 		},
 	}
 
@@ -57,7 +57,7 @@ func (ss *SkillTianYi) TriggerHandler() []TriggerHandler {
 			ac.targetCards = cards
 			g.GetCurrentPlayer().Log("太史慈 触发被动技：天义。攻击会从指定目标开始，顺时针影响所有相邻的敌方目标。目标按顺序如下：")
 			for id, v := range cards {
-				logrus.Info(id+1, ".", v.heroCfg.Name)
+				logrus.Info(id+1, ".", v.GetOwnInfo())
 			}
 		},
 	}

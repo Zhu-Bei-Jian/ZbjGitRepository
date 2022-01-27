@@ -21,7 +21,7 @@ func (ss *SkillXianTu) PreUseSkill() {
 }
 
 func (s *SkillXianTu) OnFaceUp(card *Card) {
-	var xianTuValue int32 = 6
+	xianTuValue := s.GetValue(1)
 	g := card.GetPlayer().game
 
 	for _, p := range g.players {
@@ -35,7 +35,7 @@ func (s *SkillXianTu) OnFaceUp(card *Card) {
 			}
 			SyncCampChangeHP(p, card, oldHP, p.hp)
 
-			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("张松 献图：翻牌技：对方军营回复6点生命（不超过上限）,实际回复%v", p.hp-oldHP))
+			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("张松 献图：翻牌技：对方军营回复%v点生命（不超过上限）,实际回复%v", xianTuValue, p.hp-oldHP))
 			break
 		}
 	}

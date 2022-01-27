@@ -14,6 +14,7 @@ func (ss *BuffXuShen) TriggerHandler() []TriggerHandler {
 		name:         "BuffXuShen",
 		triggerTypes: []TriggerType{TriggerType_PhaseEnd},
 		handle: func(g *GameBase, ad core.IActionData, params ...interface{}) {
+			cfg := g.GetBuffCfg(ss.GetBuffId())
 			for _, rows := range g.board.cells {
 				for _, v := range rows {
 					if !v.HasCard() || !v.HasBuff(ss.GetBuffId()) || v.owner.seatId != g.GetCurrentPlayer().seatId {
@@ -23,7 +24,7 @@ func (ss *BuffXuShen) TriggerHandler() []TriggerHandler {
 					var value int32 = 0
 					for _, bf := range v.Card.buffs {
 						if bf.buffCfg.BuffID == ss.GetBuffId() {
-							value += 2 * bf.buffCount
+							value += cfg.GetBuffHP() * bf.buffCount
 						}
 					}
 					v.AddHP(value)

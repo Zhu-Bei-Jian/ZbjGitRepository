@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	"sanguosha.com/sgs_herox/game/core"
 	"sanguosha.com/sgs_herox/proto/gameconf"
 )
@@ -30,6 +29,8 @@ func (ss *SkillTianMing) TriggerHandler() []TriggerHandler {
 						card = cd
 					}
 				}
+			case *ActionActAttack:
+				card = t.srcCard
 			default:
 				return
 			}
@@ -45,18 +46,6 @@ func (ss *SkillTianMing) TriggerHandler() []TriggerHandler {
 			card.owner.game.PostActData(ss)
 			ss.PostActStream(func() {
 				StartGetBuff(card, ss.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, card)
-			})
-			ss.PostActStream(func() {
-
-				//天命 改变 血上限
-				card.AddHpMax(1)
-				card.AddHP(1)
-				SyncChangeHP(card, card.GetHP()-1, card.GetHP(), card, ss.GetSkillId())
-
-				card.attack++
-				SyncChangeAttack(card, card.attack-1, card.attack, card)
-
-				g.GetCurrentPlayer().Log(fmt.Sprintf("触发被动技：%v", ss.skillCfg.Name))
 			})
 
 		},

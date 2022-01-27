@@ -54,7 +54,7 @@ func (s *SkillZhenDu) OnFaceUp(card *Card) {
 	g := card.owner.game
 	g.PostActData(s)
 	s.PostActStream(func() {
-		ad := NewActionDamageCard(g, s.targetCards[0], card, nil, 3, s.GetSkillId())
+		ad := NewActionDamageCard(g, s.targetCards[0], card, nil, s.GetValue(1), s.GetSkillId())
 		ad.DoDamage()
 	})
 }

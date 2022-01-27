@@ -90,7 +90,7 @@ func (tm *TriggerManager) init() {
 
 	buffCfgs := tm.game.config.Buff.All()
 	for _, buffCfg := range buffCfgs {
-		tBuff, exist := NewBuff(buffCfg)
+		tBuff, exist := newBuff(buffCfg)
 		if !exist {
 			continue
 		}
@@ -101,7 +101,7 @@ func (tm *TriggerManager) init() {
 	}
 
 	//注册 buff_common
-	t, exist := NewBuff(&gameconf.BuffConfDefine{})
+	t, exist := newBuff(&gameconf.BuffConfDefine{})
 	if !exist {
 		return
 	}

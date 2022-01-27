@@ -25,8 +25,9 @@ func (ss *SkillShangWu) TriggerHandler() []TriggerHandler {
 				return
 			}
 			cards := g.skillCards(g.GetCurrentPlayer(), ss.GetSkillId())
+
 			if len(cards) == 1 {
-				ac.extraDamageToCamp += 2
+				ac.extraDamageToCamp += g.GetBuffCfg(ss.GetBuffId0()).GetBuffDamage()
 				g.GetCurrentPlayer().Log(fmt.Sprintf("尚武：被动技，己方武将(%v)攻击军营造成的伤害+2。", ac.srcCard))
 			}
 

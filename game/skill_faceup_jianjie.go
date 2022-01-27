@@ -41,13 +41,14 @@ func (s *SkillJianJie) OnFaceUp(card *Card) {
 	if s.targetCards == nil {
 		return
 	}
-	card.owner.game.PostActData(s)
+	g := card.owner.game
+	cfg := g.GetBuffCfg(s.GetBuffId0())
+	g.PostActData(s)
 	s.PostActStream(func() {
 		StartGetBuff(s.targetCards[0], s.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, card)
 	})
 	s.PostActStream(func() {
-		ModifyHPAttack(s.targetCards[0], -s.targetCards[0].GetHP()+4, -s.targetCards[0].attack+10, card, s.GetSkillId())
-
+		s.targetCards[0].SetBodyAndNotify(cfg.GetBuffAttack(), cfg.GetBuffHP())
 	})
 
 }

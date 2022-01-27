@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	"sanguosha.com/sgs_herox/game/core"
 	"sanguosha.com/sgs_herox/gameutil"
 	"sanguosha.com/sgs_herox/proto/gameconf"
@@ -36,17 +35,6 @@ func (ss *SkillYingHun) TriggerHandler() []TriggerHandler {
 			g.PostActData(ss)
 			ss.PostActStream(func() {
 				StartGetBuff(card, ss.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, cards[0])
-			})
-
-			ss.PostActStream(func() {
-				card.AddHpMax(1)
-				card.AddHP(1)
-				SyncChangeHP(card, card.GetHP()-1, card.GetHP(), cards[0], ss.GetSkillId())
-
-				card.attack++
-				SyncChangeAttack(card, card.attack-1, card.attack, cards[0])
-
-				g.GetCurrentPlayer().Log(fmt.Sprintf("触发被动技：%v", ss.skillCfg.Name))
 			})
 
 		},

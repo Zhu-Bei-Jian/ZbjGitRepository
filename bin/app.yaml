@@ -40,7 +40,7 @@ kafka:
   log:
     address: [ "10.225.136.212:9092"]
     topic: "log_topic"
-    open: true
+    open: false
 
 redis:
   user:

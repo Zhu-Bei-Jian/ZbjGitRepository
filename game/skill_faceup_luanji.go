@@ -25,9 +25,9 @@ func (ss *SkillLuanJi) PreUseSkill() {
 func (s *SkillLuanJi) OnFaceUp(card *Card) {
 	p := card.GetPlayer()
 	g := p.game
-	damageValue := int32(2)
+	damageValue := s.GetValue(1)
 	if IsInWarZone(card) {
-		damageValue = 4
+		damageValue = s.GetValue(2)
 	}
 	g.PostActData(s)
 	card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v开始发动乱击,对其他武将造成%d点伤害", card.GetOwnInfo(), damageValue))

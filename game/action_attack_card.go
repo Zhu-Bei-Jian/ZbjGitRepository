@@ -73,10 +73,7 @@ func (ac *ActionAttackCard) DoAttack() {
 
 	//攻击后触发
 	ac.PostActStream(func() {
-
-		if opCard.GetHP() > 0 {
-			ac.game.GetTriggerMgr().Trigger(TriggerType_AfterAttack, ac)
-		}
+		ac.game.GetTriggerMgr().Trigger(TriggerType_AfterAttack, ac)
 	})
 
 	ac.PostActStream(func() { //卡牌受伤后检测，无法判断平局， 改为攻击后检测

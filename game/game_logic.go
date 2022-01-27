@@ -27,7 +27,7 @@ func (g *Game) onInitCards() {
 		var heroIds []int32
 		cardPoolCount := g.base.config.CardPoolCount
 		if p.user.userBrief.Nickname == "hi_1" || p.user.userBrief.Nickname == "hi_2" { //两个测试账号 走固定卡牌，便于debug
-			heroIds = g.base.GetHeroIdsByNames("司马懿", "赵云", "刘禅", "蔡文姬")
+			heroIds = g.base.GetHeroIdsByNames("司马懿", "刘备", "黄月英", "刘禅", "司马徽")
 			//shuffleFisherYates(heroIds)
 			for _, heroId := range heroIds {
 				card := g.genPoolCard(heroId)

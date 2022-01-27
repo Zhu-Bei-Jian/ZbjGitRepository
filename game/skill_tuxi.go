@@ -84,7 +84,7 @@ func StartGetBuff(card *Card, buffId int32, expireType gameconf.ExpireTyp, expir
 	})
 
 	ad.PostActStream(func() {
-		buff, ok := newBuff(buffId)
+		buff, ok := newBuff(buffCfg)
 		if !ok {
 			return
 		}
@@ -94,6 +94,11 @@ func StartGetBuff(card *Card, buffId int32, expireType gameconf.ExpireTyp, expir
 
 func StartLoseBuff(card *Card, buffId int32) {
 	g := card.owner.game
+
+	buffCfg, exist := g.config.Buff.Get(buffId)
+	if !exist {
+		return
+	}
 
 	ad := &ActionDataBase{}
 	g.PostActData(ad)
@@ -108,7 +113,7 @@ func StartLoseBuff(card *Card, buffId int32) {
 	})
 
 	ad.PostActStream(func() {
-		buff, ok := newBuff(buffId)
+		buff, ok := newBuff(buffCfg)
 		if !ok {
 			return
 		}

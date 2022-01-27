@@ -38,7 +38,7 @@ func (s *SkillJieFan) OnFaceUp(card *Card) {
 		if oldhp == g.config.CampHP {
 			return
 		}
-		g.players[mySeatId].hp += 8
+		g.players[mySeatId].hp += s.GetValue(1)
 		if g.players[mySeatId].hp > g.config.CampHP {
 			g.players[mySeatId].hp = g.config.CampHP
 		}
@@ -46,7 +46,7 @@ func (s *SkillJieFan) OnFaceUp(card *Card) {
 		card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v 发动解烦。令己方军营回复8点生命 ", card.GetOwnInfo()))
 	} else {
 		//必须走伤害流程ActionDamageCamp，需要与其他技能交互（军营免疫伤害 等）
-		NewActionDamageCamp(g, g.players[selectCampId], card, 8).DoDamage()
+		NewActionDamageCamp(g, g.players[selectCampId], card, s.GetValue(1)).DoDamage()
 		card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v 发动解烦。对敌方军营造成8点伤害", card.GetOwnInfo()))
 	}
 

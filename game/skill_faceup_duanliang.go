@@ -49,16 +49,16 @@ func (s *SkillDuanLiang) OnFaceUp(card *Card) {
 	targetCell := s.targetCards[0].cell
 	g.PostActData(s)
 	s.PostActStream(func() {
-		actDamage := NewActionDamageCard(g, target, card, nil, 4, s.GetSkillId())
+		actDamage := NewActionDamageCard(g, target, card, nil, s.GetValue(1), s.GetSkillId())
 		actDamage.DoDamage()
 	})
 
 	s.PostActStream(func() {
 		if !target.IsDead() {
-			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("徐晃发动技能断粮，对%v造成4点伤害,%v死亡", target.heroCfg.Name, target.heroCfg.Name))
+			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v发动技能断粮，对%v造成%v点伤害,%v死亡", card.GetOwnInfo(), target.heroCfg.Name, s.GetValue(1), target.heroCfg.Name))
 			StartExchangePos(card, target)
 		} else {
-			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("徐晃发动技能断粮，对%v造成4点伤害", target.heroCfg.Name))
+			card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v发动技能断粮，对%v造成%v点伤害", card.GetOwnInfo(), target.GetOwnInfo(), s.GetValue(1)))
 			StartMoveToCell(card, targetCell)
 		}
 

@@ -55,12 +55,6 @@ func (ac *ActionAttackCamp) DoAttack() {
 		ac.game.GetTriggerMgr().Trigger(TriggerType_BeRetAttackByCamp, ac)
 	})
 
-	ac.PostActStream(func() {
-		if ac.srcCard.IsDead() {
-			ac.Stop()
-		}
-	})
-
 	//攻击者受伤
 	ac.PostActStream(func() {
 		damage := ac.retDamage
@@ -68,13 +62,16 @@ func (ac *ActionAttackCamp) DoAttack() {
 			return
 		}
 		//军营对 攻击卡牌 造成 反伤
+		if ac.srcCard.IsDead() {
+			return
+		}
 		actDamage := NewActionDamageCard(ac.game, ac.srcCard, nil, ac.campPlayer, damage, 0)
 		actDamage.DoDamage()
 	})
 	ac.PostActStream(func() {
-		if ac.srcCard.GetHP() > 0 {
-			ac.game.GetTriggerMgr().Trigger(TriggerType_AfterAttack, ac)
-		}
+		//即使 攻击者 已死亡，仍要触发
+		ac.game.GetTriggerMgr().Trigger(TriggerType_AfterAttack, ac)
+
 	})
 
 }

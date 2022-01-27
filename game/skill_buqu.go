@@ -28,7 +28,7 @@ func (ss *SkillBuQu) TriggerHandler() []TriggerHandler {
 				return
 			}
 			enemySeatId := (card.owner.seatId + 1) % 2
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v死亡，触发不屈：阵亡时，对敌方军营造成4点伤害", card.GetOwnInfo()))
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v死亡，触发不屈：阵亡时，对敌方军营造成%v点伤害", card.GetOwnInfo(), ss.GetValue(1)))
 
 			actionData := &ActionDataBase{}
 			g.PostActData(actionData)
@@ -45,7 +45,7 @@ func (ss *SkillBuQu) TriggerHandler() []TriggerHandler {
 			})
 
 			actionData.PostActStream(func() {
-				NewActionDamageCamp(g, g.players[enemySeatId], card, 4).DoDamage()
+				NewActionDamageCamp(g, g.players[enemySeatId], card, ss.GetValue(1)).DoDamage()
 			})
 
 		},

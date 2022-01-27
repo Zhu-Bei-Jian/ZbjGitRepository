@@ -27,7 +27,7 @@ func (ss *SkillXianZhen) OnFaceUp(card *Card) {
 			ti := i
 			if cd, ok := card.owner.game.board.cells[warRow][ti].GetCard(); ok {
 				ss.PostActStream(func() {
-					NewActionDamageCard(cd.owner.game, cd, card, nil, 4, ss.GetSkillId()).DoDamage()
+					NewActionDamageCard(cd.owner.game, cd, card, nil, ss.GetValue(1), ss.GetSkillId()).DoDamage()
 				})
 			}
 		}

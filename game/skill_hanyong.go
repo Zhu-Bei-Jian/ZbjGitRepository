@@ -59,7 +59,7 @@ func (ss *SkillHanYong) TriggerHandler() []TriggerHandler {
 			})
 
 			actionData.PostActStream(func() {
-				NewActionDamageCard(g, t, card, nil, 2, ss.GetSkillId()).DoDamage()
+				NewActionDamageCard(g, t, card, nil, ss.GetValue(1), ss.GetSkillId()).DoDamage()
 			})
 
 		},

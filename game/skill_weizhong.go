@@ -28,8 +28,8 @@ func (ss *SkillWeiZhong) TriggerHandler() []TriggerHandler {
 				}
 			}
 			if len(cards) == 1 {
-				logrus.Info("%v 触发被动技：回合结束时，生命值-3", cards[0].GetOwnInfo())
-				NewActionDamageCard(g, cards[0], cards[0], nil, 3, ss.GetSkillId()).DoDamage()
+				logrus.Infof("%v 触发被动技：回合结束时，生命值-%v", cards[0].GetOwnInfo(), ss.GetValue(1))
+				NewActionDamageCard(g, cards[0], cards[0], nil, ss.GetValue(1), ss.GetSkillId()).DoDamage()
 			}
 
 		},

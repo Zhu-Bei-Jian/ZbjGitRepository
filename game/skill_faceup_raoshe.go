@@ -31,7 +31,7 @@ func (s *SkillRaoShe) OnFaceUp(card *Card) {
 		}
 		cd := v
 		s.PostActStream(func() {
-			NewActionDamageCard(g, cd, card, nil, 6, s.GetSkillId()).DoDamage()
+			NewActionDamageCard(g, cd, card, nil, s.GetValue(1), s.GetSkillId()).DoDamage()
 		})
 
 	}

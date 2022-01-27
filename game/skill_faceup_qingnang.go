@@ -1,6 +1,9 @@
 package game
 
-import gamedef "sanguosha.com/sgs_herox/proto/def"
+import (
+	"fmt"
+	gamedef "sanguosha.com/sgs_herox/proto/def"
+)
 
 type SkillQingNang struct {
 	HeroSkill
@@ -39,6 +42,7 @@ func (ss *SkillQingNang) OnFaceUp(card *Card) {
 	}
 	t := ss.targetCards[0]
 	oldHp := t.GetHP()
-	t.AddHP(10)
+	t.AddHP(ss.GetValue(1))
 	SyncChangeHP(t, oldHp, t.GetHP(), card, ss.GetSkillId())
+	card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v 青囊 翻牌技：指定一名武将(%v)恢复%v点生命值", card.GetOwnInfo(), t.GetOwnInfo(), ss.GetValue(1)))
 }

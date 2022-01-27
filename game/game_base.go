@@ -480,3 +480,12 @@ func (g *GameBase) NoticeOpCommon(opPlayer *Player, opType cmsg.SNoticeOp_OpType
 func (g *GameBase) phaseLeftSec() int64 {
 	return g.PhaseEndTime - time.Now().Unix()
 }
+
+func (g *GameBase) GetBuffCfg(buffId int32) *gameconf.BuffConfDefine {
+	bf, ok := g.config.Buff.Get(buffId)
+	if ok {
+		return bf
+	} else {
+		return nil
+	}
+}

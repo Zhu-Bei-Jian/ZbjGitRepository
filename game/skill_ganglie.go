@@ -24,7 +24,7 @@ func (ss *SkillGangLie) TriggerHandler() []TriggerHandler {
 			if ac.targetCard.skillCfg.SkillID != ss.GetSkillId() {
 				return
 			}
-			ac.extraRetDamage += 6
+			ac.extraRetDamage += ss.GetValue(1)
 
 			g.GetCurrentPlayer().Log(fmt.Sprintf("%v触发被动技 %v", ac.targetCard.GetOwnInfo(), ac.targetCard.skillCfg.Name))
 		},

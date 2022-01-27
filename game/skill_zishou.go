@@ -49,7 +49,7 @@ func (ss *SkillZiShou) TriggerHandler() []TriggerHandler {
 				return
 			}
 			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 自守：你的军营反伤增加2点. %v 受到额外2点的反伤", liuBiao.GetOwnInfo(), ac.card.GetOwnInfo()))
-			ac.damage += 2
+			ac.damage += g.GetBuffCfg(ss.GetBuffId0()).BuffDamage
 
 		},
 	}

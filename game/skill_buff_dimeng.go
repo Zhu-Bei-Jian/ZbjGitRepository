@@ -26,7 +26,7 @@ func (ss *BuffDiMeng) TriggerHandler() []TriggerHandler {
 			}
 			for _, v := range card.buffs {
 				if v.buffCfg.BuffID == ss.GetBuffId() {
-					ac.extraRetDamage -= 3
+					ac.extraRetDamage -= ss.GetCfg().BuffDamage
 				}
 			}
 

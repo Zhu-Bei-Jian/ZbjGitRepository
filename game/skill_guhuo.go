@@ -26,7 +26,7 @@ func (ss *SkillGuHuo) TriggerHandler() []TriggerHandler {
 					if cell.Card.HasSkill(ss.skillCfg.SkillID) {
 						cd := cell.Card
 						oldHp := cd.GetHP()
-						cd.AddHP(5)
+						cd.AddHP(ss.GetValue(1))
 						if cd.GetHP() == oldHp {
 							logrus.Info("-蛊惑-：于吉已满血，此次触发将不回复血量 ")
 							return

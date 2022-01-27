@@ -26,8 +26,8 @@ func (ss *SkillPaoXiao) TriggerHandler() []TriggerHandler {
 			if ac.targetCard.skillCfg.SkillID != ss.GetSkillId() {
 				return
 			}
-			ac.targetExtraDamage -= 2
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v受到攻击，被动技咆哮生效，受到的伤害-2", ac.targetCard.GetOwnInfo()))
+			ac.targetExtraDamage -= ss.GetValue(1)
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v受到攻击，被动技咆哮生效，受到的伤害-%v", ac.targetCard.GetOwnInfo(), ss.GetValue(1)))
 		},
 	}
 	th2 := TriggerHandler{
@@ -62,7 +62,7 @@ func (ss *SkillPaoXiao) TriggerHandler() []TriggerHandler {
 				return
 			}
 			ac.extraRetDamage -= 2
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 受到的反击伤害-2", ac.srcCard.GetOwnInfo()))
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 受到的反击伤害-%v", ac.srcCard.GetOwnInfo(), ss.GetValue(1)))
 		},
 	}
 	return []TriggerHandler{th1, th2, th3}

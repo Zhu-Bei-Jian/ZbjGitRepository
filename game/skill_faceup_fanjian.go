@@ -47,7 +47,7 @@ func (s *SkillFanJian) OnFaceUp(card *Card) {
 	g := p.game
 	target := s.targetCards[0]
 
-	actDamage := NewActionDamageCard(g, target, card, nil, 3, s.GetSkillId())
+	actDamage := NewActionDamageCard(g, target, card, nil, s.GetValue(1), s.GetSkillId())
 	actDamage.DoDamage()
 
 }

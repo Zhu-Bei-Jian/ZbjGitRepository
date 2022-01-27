@@ -22,6 +22,7 @@ type Skill interface {
 	SetTargets(cards []*Card)
 	AddTarget(card *Card)
 	SetDataToClient(data []int32)
+	GetValue(int32) int32
 }
 
 type HeroSkill struct {
@@ -41,6 +42,15 @@ func (p *HeroSkill) GetBuffId0() int32 {
 	}
 
 	return p.skillCfg.Buffs[0]
+}
+
+func (p *HeroSkill) GetValue(id int32) int32 {
+	if id == 1 {
+		return p.skillCfg.Value1
+	} else {
+		return p.skillCfg.Value2
+	}
+
 }
 
 func (p *HeroSkill) CanUse() ([]*Card, error) {

@@ -26,8 +26,8 @@ func (ss *SkillWeiMu) TriggerHandler() []TriggerHandler {
 			if ac.targetCard.skillCfg.SkillID != ss.GetSkillId() {
 				return
 			}
-			ac.targetExtraDamage -= 2 //贾诩作为 被攻击者 target， 受到的伤害-2
-			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 触发被动技：%v", ac.targetCard.GetOwnInfo(), ss.skillCfg.Name))
+			ac.targetExtraDamage -= ss.GetValue(1) //贾诩作为 被攻击者 target， 受到的伤害-2
+			g.GetCurrentPlayer().Log(fmt.Sprintf("%v 触发 %v", ac.targetCard.GetOwnInfo(), ss.skillCfg.GetDesc()))
 		},
 	}
 	return []TriggerHandler{th}

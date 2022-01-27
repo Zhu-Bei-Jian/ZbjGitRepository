@@ -24,10 +24,9 @@ func (s *SkillFengCheng) OnFaceUp(card *Card) {
 	card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf("%v发动%v ,对己方军营造成5点伤害 ", s.card.GetOwnInfo(), s.card.skillCfg.Name))
 	g := card.GetPlayer().game
 	g.PostActData(s)
-	var fengChengDamageValue = int32(5)
 	s.PostActStream(func() {
-		card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf(" %v发动 焚城：翻牌技：对己方军营造成5点伤害", card.GetOwnInfo()))
-		actDamage := NewActionDamageCamp(g, card.owner, card, fengChengDamageValue)
+		card.owner.game.GetCurrentPlayer().Log(fmt.Sprintf(" %v发动 焚城：翻牌技：对己方军营造成%v点伤害", card.GetOwnInfo(), s.GetValue(1)))
+		actDamage := NewActionDamageCamp(g, card.owner, card, s.GetValue(1))
 		actDamage.DoDamage()
 	})
 }

@@ -14,8 +14,8 @@ func (p *Buff) loadConf(baseCfg *gameconf.GameBaseConfig) error {
 	return nil
 }
 
-func (p *Buff) Get(skillId int32) (*gameconf.BuffConfDefine, bool) {
-	v, ok := p.buffs[skillId]
+func (p *Buff) Get(buffId int32) (*gameconf.BuffConfDefine, bool) {
+	v, ok := p.buffs[buffId]
 	return v, ok
 }
 

@@ -116,6 +116,10 @@ func (ac *ActionActAttack) DoAttack() {
 		card := ac.srcCard.cell.RemoveCard()
 		ac.game.board.cells[targetCell[deadId].Row][targetCell[deadId].Col].SetCard(card)
 		SyncChangePos(&fromPos, ac.game, card)
+
+		ac.PostActStream(func() {
+			ac.game.GetTriggerMgr().Trigger(TriggerType_AfterPosChange, ac)
+		})
 	})
 
 }

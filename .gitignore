@@ -7,12 +7,14 @@ debug
 *.log_lock
 *.log_symlink
 *.rej
+/bin/netconfig.json
 /AIServer/vc9bin/Server/netconfig.json
 /bin/logsvr.json
 /bin/token.db
 /bin/logsvr
 /bin/all-in-one
 /bin/all-in-one-arm
+/bin/web/data/filecache.txt
 
 /bins/gameconf
 /bins/logs
@@ -586,6 +588,7 @@ bin/logserver
 bin/monitersvr
 bin/tokensvr
 tcpkali/
+bin/app.yaml
 sftp-config-alt2.json
 cmd/all-in-one/web/
 pconf/

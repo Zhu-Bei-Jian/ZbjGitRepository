@@ -178,22 +178,25 @@ message SkillConfDefine
 	string Name = 2; // 技能名
 	
 	
+	string Desc = 3; // 通用描述
+	
+	
 	SkillTyp SkillType = 4; // 技能类型
 	
 	
-	int32 AttckCountInTurn = 5; // 每轮可攻击次数（-1代表无限）
+	int32 SelectCardCount = 6; // 操作类翻牌技作用对象数量
 	
 	
-	SelectCardTyp SelectCardType = 6; // 操作类翻牌技作用对象
+	AreaTyp GainAreaType = 7; // 区域增益（数量加1）
 	
 	
-	int32 SelectCardCount = 7; // 操作类翻牌技作用对象数量
+	repeated int32 Buffs = 8; // 该技能会产生的buff
 	
 	
-	AreaTyp GainAreaType = 8; // 区域增益（数量加1）
+	int32 Value1 = 9; // 技能涉及的数值（对应buff涉及的数值请在buff表配置）
 	
 	
-	repeated int32 Buffs = 9; // 该技能会产生的buff
+	int32 Value2 = 10; 
 
 }
 
@@ -215,6 +218,18 @@ message BuffConfDefine
 	
 	
 	bool IsOverlap = 5; 
+	
+	
+	int32 BuffAttack = 6; // 攻击相关数值（区分正负）
+	
+	
+	int32 BuffHP = 7; // 血量相关数值（区分正负）
+	
+	
+	int32 BuffDamage = 8; // 伤害相关数值（绝对值）
+	
+	
+	int32 ExpireV = 9; // buff生命周期（次数或者回合数）
 
 }
 

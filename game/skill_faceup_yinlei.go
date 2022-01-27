@@ -18,7 +18,7 @@ func (ss *SkillYinLei) OnFaceUp(card *Card) {
 	g.PostActData(ss)
 	ss.PostActStream(func() {
 
-		for i := 0; i < 5; i++ {
+		for i := int32(0); i < ss.GetValue(1); i++ {
 
 			ss.PostActStream(func() {
 				var otherCards []*Card
@@ -48,7 +48,7 @@ func (ss *SkillYinLei) OnFaceUp(card *Card) {
 					g.StartWaitingNone(1, nil)
 				})
 				ss.PostActStream(func() {
-					NewActionDamageCard(g, t, card, nil, 3, ss.GetSkillId()).DoDamage()
+					NewActionDamageCard(g, t, card, nil, ss.GetValue(2), ss.GetSkillId()).DoDamage()
 				})
 				ss.PostActStream(func() {
 					g.StartWaitingNone(1, nil)

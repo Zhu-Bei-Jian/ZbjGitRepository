@@ -20,12 +20,5 @@ func (s *SkillHuoShou) OnFaceUp(card *Card) {
 	s.PostActStream(func() {
 		StartGetBuff(myCards[randIndex], s.GetBuffId0(), gameconf.ExpireTyp_ETInvalid, 0, card)
 	})
-	s.PostActStream(func() {
-		ModifyHPAttack(myCards[randIndex], 0, -2, card, s.GetSkillId())
-		if myCards[randIndex].IsDead() {
-			StartSetDeadAndNotify(myCards[randIndex], nil)
-
-		}
-	})
 
 }
