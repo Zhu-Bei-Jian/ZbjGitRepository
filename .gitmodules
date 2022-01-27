@@ -1,0 +1,3 @@
+[submodule "sanguosha.com/sgs_herox"]
+	path = sanguosha.com/sgs_herox
+	url = git@code.dobest.com:herox/server.git
