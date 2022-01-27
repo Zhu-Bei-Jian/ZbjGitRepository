@@ -1,4 +1,0 @@
-{
-  "src_ds": "nuyan_api:KOgNpKmlhPtk5UsB@tcp(10.225.136.159)/sgs_nuyan?charset=utf8",
-  "dst_ds" : "root:zhubeijian@tcp(localhost:3306)/ny?charset=utf8"
-}
