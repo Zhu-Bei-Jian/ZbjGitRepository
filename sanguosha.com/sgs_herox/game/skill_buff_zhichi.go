@@ -2,6 +2,7 @@ package game
 
 import (
 	"fmt"
+
 	"sanguosha.com/sgs_herox/game/core"
 )
 
@@ -44,7 +45,7 @@ func (ss *BuffZhiChi) TriggerHandler() []TriggerHandler {
 					return
 				}
 				var bf *buff
-				if bf, ok = ac.srcCard.GetBuff(ss.GetBuffId()); ok {
+				if bf, ok = ac.srcCard.GetBuff(ss.GetBuffId()); !ok {
 					return
 				}
 
