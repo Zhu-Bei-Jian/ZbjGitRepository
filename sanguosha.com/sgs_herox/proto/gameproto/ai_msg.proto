@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package smsg;
+
+// ------------- ai server -------------
+
+message SyncAIVersion{
+    uint32 id = 1;
+    uint32 ver = 2;
+}
+
+//机器人监控状态
+enum emRobotState{
+    ROBOT_STATE_NONE = 0;   //空
+    ROBOT_STATE_MONITOR = 1;//监管状态
+    ROBOT_STATE_TRUSTEE = 2;//托管状态
+    ROBOT_STATE_HELP = 3;   //智能助手状态
+}
+//去AI上创建AIRobot
+message GsAiReqGetNewRobot{
+    int64 seqid          = 1;
+    uint64 robotID       = 2;
+    uint32 robot_level   = 3;
+    uint32 label_model   = 4;
+    uint64 tableID       = 5;
+    bool   is_game_start = 6;
+    string user_name     = 7;  //玩家昵称
+    emRobotState robot_state = 8;//机器人状态
+}
+
+message GsAiRespGetNewRobot{
+    enum emResult{
+        RESULT_OK = 0;
+        RESULT_FAILED = 1;
+    }
+    int64 seqid = 1;
+    emResult result = 2; 
+}
+
+// todo gs通知ai服务器机器人状态+++++++++++++++++++++++++++++++++++++++++++++++++++++
+message GsAiNotifyRobotState{
+    uint64 robotID = 1;
+    emRobotState robot_state = 2;//机器人状态
+}
+
+//删除机器人
+message GsAiNotifyDeleteRobot{
+    uint64 robotID = 1;
+}
+
+// todo 设置机器人等级++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+message GsAiReqSetRobotLevel{
+    uint64 robotID = 1;
+    uint32 robot_level = 2;
+}
+
+//通知机器人座位
+message GsAiNotifyRobotSeat{
+    message SeatData{
+        uint64 robotID = 1;
+        uint32 seatID = 2;
+    }
+    repeated SeatData seat = 1;
+}
+
+//通知AI命令
+message GsAiNotifyCmd{
+    string cmd = 1;//reload
+}
+
+message AiResponseTest {
+    int64 seqid = 1;
+}
+
+// AI吐槽
+message AiGsSpeak {
+    int64 seqid = 1;
+    int32 seat_id = 2;
+    int32 chat_msg_id = 3;
+    repeated int32 seat_id_list = 4; // 参数座位号列表
+}
+
+//一定不要用这个协议
+//AI到GS(C++游戏服务器)的逻辑协议封包(因为AI托管的有可能是玩家)
+message AiGsLogicMsgPack{
+    uint64 robotID = 1; //机器人ID(暂时不使用协议头里的UserID)
+    uint32 msg_id  = 2;
+    bytes logicmsg = 3; //逻辑协议
+}

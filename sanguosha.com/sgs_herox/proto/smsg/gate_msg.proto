@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+package smsg;
+
+import "sanguosha.com/sgs_herox/proto/def/def.proto";
+import "sanguosha.com/sgs_herox/proto/gameconf/game_type.proto";
+
+// ------------- global system message -------------
+
+
+// gate->auth
+message ReqAuth {
+    string ticket = 2;
+    gameconf.AccountLoginTyp loginType = 3;
+    string ip = 4;//ip
+	  string version = 5; //版本号
+}
+
+message RespAuth {
+    enum ErrCode {
+        ErrUnknow = 0;
+        ErrTicketInvalid = 1;//凭据无效
+        ErrForceRealName = 2;//强制实名而未实名
+        ErrExtraInfoInvalid = 3;//登录信息不全
+        ErrAccountBan = 4;//账户被封
+        ErrCreateAccountFailed = 5;//创建账号出错
+        ErrLoadAccountFailed = 6;//加载账号出错
+        ErrNotInWhiteList = 7;//未在白名单内
+        ErrNotOpenTime = 8; //未到开服时间或者已关服
+        ErrVersionNotMatch = 9; //版本不匹配
+    }
+    ErrCode errCode = 1;
+
+    uint64 userid = 10;
+    string account = 11;
+    gamedef.AuthInfo authInfo = 12;
+}
+
+
+message BroadUserLogin{//gate在登录时 通知其他gate 清理token
+    uint64 userid = 1;
+}
+
+
+message TokenData{
+    string Account = 1;
+	bool IsRealName = 2;
+	bool IsBindMobile = 3;
+	int32 UserIDType = 4;
+	bool IsGuest = 5;              
+	bool IsAdult = 6;         
+	string Pgt = 7;
+	bool IsRealNameSetSuccess = 8;
+	string Version = 10;
+	int32 userAge = 11;
+	string sndaID = 12;;
+}
+
+// gate->lobby
+message GtLsReqLogin {
+    uint64 userid = 2;
+    uint64 session = 3;
+    string IP = 6;
+    gamedef.AuthInfo authInfo = 10;
+}
+
+message GtLsRespLogin {
+    enum ErrCode {
+        ErrUnknow = 0;
+        ErrSystem = 1;
+    }
+    ErrCode errCode = 2;
+
+    gamedef.GameInfo gameInfo = 10;
+    gamedef.UserBrief userBrief = 11;
+    gamedef.ServerConfig serverCfg = 12;
+}
+
+// lobby->entity
+message EsReLogin {
+    uint64 userid = 2;
+    int64 time = 3;
+    bool isAdult = 4;
+    string IP = 5;
+    uint32 gateid = 7;
+    uint64 session = 8;
+}
+
+message LsEsReqLogin {
+    uint64 userid = 2;
+    int64 time = 3;
+    string IP = 5;
+
+    uint32 gateId = 10;
+    uint64 session = 11;
+
+    gamedef.AuthInfo authInfo = 12;
+}
+
+message LsEsRespLogin {
+    enum ErrCode {
+        None = 0;
+        ErrUnknow = 1;
+    }
+
+    uint64 userid = 2;
+    ErrCode errCode = 3;
+    gamedef.UserBrief userBrief = 4;
+}
+
+// lobby->entity
+message LsEsLogout {
+    uint64 userid = 1;
+    int64 time = 2;
+}
+
+// // 登录其他集群服务器
+// message GtSSReqLogin {
+//     int64 seqid = 1;
+//     uint64 userid = 2;
+//     uint64 sessionID = 3;
+//     string account = 4; //登录账号
+//     gamedef.UserBrief userBrief = 5;
+//     uint32 gateid = 6;
+// }
+
+// message GtSSRespLogin {
+//     int64 seqid = 1;
+//     uint64 userid = 2;
+//     uint32 errCode = 3;
+//     string errMsg = 4;
+//     bool isReconnect = 5; 
+// }
+
+// lobby->...
+message UserConnect {
+    uint64 userid = 1;
+    uint32 gateid = 2;
+    uint64 session = 3;
+}
+// lobby->...
+message UserDisconnect {
+    uint64 userid = 1;
+}
+
+// Lobby->gate
+message LoGaNtfCloseSession {
+    uint64 session = 1;
+    gameconf.KickUserOutReason reason = 2;
+    string msg = 3;
+}
+
+// gate->lobby
+message NoticeSessionClosed {
+    uint64 userid = 1;
+    uint64 session = 2;
+}
+
+// lobby->gate
+message BindSessionToServer {
+    uint64 session = 1;
+    uint32 svrType = 2;
+    uint32 svrid = 3; // 0 则为解绑
+    string uuid = 4;
+}
+
+message ReqUserGameInfo{
+    uint64 userid = 2;
+}
+
+message RespUserGameInfo{
+    uint64 userid = 2;
+    uint32 svrid = 3;
+    gameconf.GameModeTyp gameMode = 4;
+    string gameUUID = 5;
+}
+
+message SSChannelBroadcast {
+    gameconf.ChatChannelTyp  channel = 1;
+    uint32  msgId = 2;
+    bytes   logicMsg = 3;
+    uint64 ignoreUser = 4;
+    string versionGE = 5;
+}
+
+message SSBroadcast {
+    repeated uint64 users = 1;
+    bytes logicMsg = 2;
+}
+
+message RouteMessageWithUserID{
+    uint64 userID = 1;
+    uint32 msgID = 2;
+    bytes data = 3;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>平台</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <script type="text/javascript" src="depend/lib/jquery/jquery-1.9.0.min.js" ></script>
+    </head>
+    <body>
+		<form data-type="formAction" id ="formAction">
+            <table>
+                <tr>
+                <td>用户名</td><td><input type="text" name="name"></input></td>
+                </tr>
+                <tr>
+                <td>密码</td><td><input type="password" name="password"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="注册" onclick="Register()" style="width:50px;height:25px"></input></td><td><input type="button" value="登陆" onclick="Login()" style="width:160px;height:25px"></input></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+	<p id="result"></p>
+    <script type="text/javascript">
+			function Login(obj) {
+				var formobj =  document.getElementById("formAction");
+				$.post("/login", $(formobj).serialize(), function(ret){
+			        if(ret.Ret != 0) {
+			            alert(ret.Reason);
+						$("#result").text = ret.Reason;
+			        } else {
+			            location.href = "/";//list
+			        }
+			    },"json")
+			}
+            function Register(obj) {
+                var formobj =  document.getElementById("formAction");
+                $.post("/Register", $(formobj).serialize(), function(ret){
+                    if(ret.Ret != 0) {
+                        alert(ret.Reason);
+                        $("#result").text = ret.Reason;
+                    } else {
+                        location.href = "/";//list
+                    }
+                },"json")
+            }
+
+	</script>
+</html>
