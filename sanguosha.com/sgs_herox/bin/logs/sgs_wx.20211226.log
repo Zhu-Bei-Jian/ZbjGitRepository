@@ -1,0 +1,434 @@
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Server_ReqHeartBeat msgid=2299224711 msgtype="*netframe.Server_ReqHeartBeat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Server_RespHeartBeat msgid=2932688115 msgtype="*netframe.Server_RespHeartBeat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Server_ReqRegister msgid=39992008 msgtype="*netframe.Server_ReqRegister"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Server_RespRegister msgid=1178789260 msgtype="*netframe.Server_RespRegister"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Server_ReportUnRegister msgid=543822648 msgtype="*netframe.Server_ReportUnRegister"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Client_ReqHeartBeat msgid=3647243152 msgtype="*netframe.Client_ReqHeartBeat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netframe.Client_RespHeartBeat msgid=4241203303 msgtype="*netframe.Client_RespHeartBeat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Master_ReqVerifyConfigFile msgid=2100077555 msgtype="*netcluster.Master_ReqVerifyConfigFile"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Master_PublishServerStatus msgid=2027958548 msgtype="*netcluster.Master_PublishServerStatus"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Master_PublishLoadLevel msgid=3401366591 msgtype="*netcluster.Master_PublishLoadLevel"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_ReqShiftFixMaster msgid=3687480382 msgtype="*netcluster.Slave_ReqShiftFixMaster"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_RepShiftFixMaster msgid=3020068253 msgtype="*netcluster.Slave_RepShiftFixMaster"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.SS_CmdPrepareCloseServer msgid=4182692646 msgtype="*netcluster.SS_CmdPrepareCloseServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=protoreq.ErrCode msgid=1379316809 msgtype="*protoreq.ErrCode"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllReqReload msgid=2894016988 msgtype="*smsg.AdAllReqReload"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespAuth msgid=1372694883 msgtype="*smsg.RespAuth"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.GtLsRespLogin msgid=2630783037 msgtype="*smsg.GtLsRespLogin"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_ReportLoadLevel msgid=3327509332 msgtype="*netcluster.Slave_ReportLoadLevel"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=info msg="Connect to DB ..." source="root:zhubeijian@tcp(localhost:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 redis" address="10.225.10.194:6379"
+time="2021-12-26T20:54:36+08:00" level=info msg="InitGameMsgHandler !!!!!!!!!!!"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_ReqVerifyConfigFile msgid=3548285016 msgtype="*netcluster.Slave_ReqVerifyConfigFile"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqLogin msgid=3750207756 msgtype="*cmsg.CReqLogin"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.SyncServerInfo msgid=711913824 msgtype="*smsg.SyncServerInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespUserData msgid=3781385747 msgtype="*smsg.RespUserData"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_RepVerifyConfigFile msgid=993937018 msgtype="*netcluster.Slave_RepVerifyConfigFile"
+time="2021-12-26T20:54:36+08:00" level=info msg="Connect to DB succ" source="root:zhubeijian@tcp(localhost:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaNtfCloseSession msgid=849462566 msgtype="*smsg.LoGaNtfCloseSession"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.PuEnRespAddProp msgid=77494410 msgtype="*smsg.PuEnRespAddProp"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.Slave_UptConfigMd5 msgid=343067553 msgtype="*netcluster.Slave_UptConfigMd5"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LsEsReqLogin msgid=3686094365 msgtype="*smsg.LsEsReqLogin"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=info msg="连接 redis 成功"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LsEsLogout msgid=2516717238 msgtype="*smsg.LsEsLogout"
+time="2021-12-26T20:54:36+08:00" level=info msg="ServerInfos Reset 1101 map[ApkVersionInfo:版本过低，请更新客户端1 ApkVersionLimit: DingDingTokens: InnerIp:183.129.243.134;60.190.230.178 ServerCloseTime:2099-07-25 11:55:00 ServerOpenTime:2019-07-25 11:55:00 UnloadGame: UnloadSvr:]"
+time="2021-12-26T20:54:36+08:00" level=info msg="ServerInfos Update 1101 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllReqCloseServer msgid=3565464691 msgtype="*smsg.AdAllReqCloseServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.BindSessionToServer msgid=393199745 msgtype="*smsg.BindSessionToServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaReqNewGame msgid=3526222554 msgtype="*smsg.LoGaReqNewGame"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=netcluster.SM_ReqPrepareCloseMyself msgid=1945139037 msgtype="*netcluster.SM_ReqPrepareCloseMyself"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllReqPingServer msgid=3998588927 msgtype="*smsg.AdAllReqPingServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespCancelMatch msgid=1691317499 msgtype="*cmsg.SRespCancelMatch"
+time="2021-12-26T20:54:36+08:00" level=info msg="Connect to DB succ" source="root:zhubeijian@tcp(localhost:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Listen start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="Master (master) running..." id=101
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaReqUserQuit msgid=1459323631 msgtype="*smsg.LoGaReqUserQuit"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ReqAuth msgid=3637669198 msgtype="*smsg.ReqAuth"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="App (auth) running..." id=301
+time="2021-12-26T20:54:36+08:00" level=info msg="initEntityMsgHandler !!!!!!!!!!!"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CCancelMatch msgid=1694553756 msgtype="*cmsg.CCancelMatch"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaReqLookGame msgid=1831631687 msgtype="*smsg.LoGaReqLookGame"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.PuAcRespUserSummary msgid=871177035 msgtype="*smsg.PuAcRespUserSummary"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespMatch msgid=344354167 msgtype="*smsg.RespMatch"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeMatchResult msgid=2087454218 msgtype="*cmsg.SNoticeMatchResult"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ReqGameRemove msgid=379079684 msgtype="*smsg.ReqGameRemove"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.PuAcRespQueryUserID msgid=2443222715 msgtype="*smsg.PuAcRespQueryUserID"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ReqUserData msgid=979485417 msgtype="*smsg.ReqUserData"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.SyncReqMyData msgid=2932174633 msgtype="*smsg.SyncReqMyData"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespMatch msgid=3569632511 msgtype="*cmsg.SRespMatch"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AcEnRespCacheUserSummary msgid=2823153814 msgtype="*smsg.AcEnRespCacheUserSummary"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.UserDisconnect msgid=1371010095 msgtype="*smsg.UserDisconnect"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.GsEsGameOver msgid=274880390 msgtype="*smsg.GsEsGameOver"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-1 module=netframe svrid=301 svrtype=3
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=301 svrtype=3
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AllEnReqUserInfo msgid=1778220157 msgtype="*smsg.AllEnReqUserInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqMatch msgid=3455664410 msgtype="*cmsg.CReqMatch"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RouteMessageWithUserID msgid=1555512104 msgtype="*smsg.RouteMessageWithUserID"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.UserConnect msgid=481932553 msgtype="*smsg.UserConnect"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespCommonError msgid=2623595170 msgtype="*cmsg.SRespCommonError"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncServerTime msgid=542856772 msgtype="*cmsg.SSyncServerTime"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.PuAcReqUserSummary msgid=3663286998 msgtype="*smsg.PuAcReqUserSummary"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqGameScene msgid=2464708518 msgtype="*cmsg.CReqGameScene"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeLogout msgid=564350993 msgtype="*cmsg.SNoticeLogout"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.PuAcReqQueryUserID msgid=2014631718 msgtype="*smsg.PuAcReqQueryUserID"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqChat msgid=1503941111 msgtype="*cmsg.CReqChat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeDebugInfo msgid=54900872 msgtype="*cmsg.SNoticeDebugInfo"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqAct msgid=4152279069 msgtype="*cmsg.CReqAct"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqOpt msgid=3737441004 msgtype="*cmsg.CReqOpt"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncLookerCount msgid=790044760 msgtype="*cmsg.SSyncLookerCount"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeRoomEvent msgid=1831617155 msgtype="*cmsg.SNoticeRoomEvent"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNotifyRoomChange msgid=2958793841 msgtype="*cmsg.SNotifyRoomChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomStartGame msgid=3254828940 msgtype="*cmsg.SRespRoomStartGame"
+time="2021-12-26T20:54:36+08:00" level=info msg="App (account) running..." id=1501
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqCancelCurOpt msgid=3130776531 msgtype="*cmsg.CReqCancelCurOpt"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomStartGame msgid=2041352554 msgtype="*cmsg.CReqRoomStartGame"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeRoomChangeSeat msgid=1342899838 msgtype="*cmsg.SNoticeRoomChangeSeat"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="App (entity) running..." id=501
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeRoomKick msgid=3735553082 msgtype="*cmsg.SNoticeRoomKick"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeRoomTimer msgid=259629144 msgtype="*cmsg.SNoticeRoomTimer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdEnRespChangeUserData msgid=3868525415 msgtype="*smsg.AdEnRespChangeUserData"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-2 module=netframe svrid=1501 svrtype=15
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=1501 svrtype=15
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllReqMetrics msgid=1394137578 msgtype="*smsg.AdAllReqMetrics"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomKick msgid=1172869451 msgtype="*cmsg.SRespRoomKick"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomKick msgid=1384087262 msgtype="*cmsg.CReqRoomKick"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomLeave msgid=4133619403 msgtype="*cmsg.SRespRoomLeave"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllRespGMCommand msgid=3574552437 msgtype="*smsg.AdAllRespGMCommand"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespGameRemove msgid=805041027 msgtype="*smsg.RespGameRemove"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=301 svrtype=3
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LsEsRespLogin msgid=1154190342 msgtype="*smsg.LsEsRespLogin"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaRespNewPVPGame msgid=2950943292 msgtype="*smsg.LoGaRespNewPVPGame"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespUserSyncDB msgid=1265478340 msgtype="*smsg.RespUserSyncDB"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomLeave msgid=3299721681 msgtype="*cmsg.CReqRoomLeave"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ReqUserGameInfo msgid=722460026 msgtype="*smsg.ReqUserGameInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespQueryBackup msgid=846667095 msgtype="*smsg.RespQueryBackup"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="App (game1) running..." id=601
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-3 module=netframe svrid=501 svrtype=5
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=501 svrtype=5
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomReady msgid=3116236328 msgtype="*cmsg.SRespRoomReady"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomReady msgid=2339518770 msgtype="*cmsg.CReqRoomReady"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.GtLsReqLogin msgid=621360994 msgtype="*smsg.GtLsReqLogin"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllRespReload msgid=249722613 msgtype="*smsg.AdAllRespReload"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomLookerInfo msgid=1946967492 msgtype="*cmsg.SRespRoomLookerInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomLookerInfo msgid=2878904865 msgtype="*cmsg.CReqRoomLookerInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomSeatChange msgid=2848019880 msgtype="*cmsg.SRespRoomSeatChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomSeatChange msgid=1985319501 msgtype="*cmsg.CReqRoomSeatChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomJoin msgid=3871137824 msgtype="*cmsg.SRespRoomJoin"
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.SSNoticeUser msgid=3078208074 msgtype="*smsg.SSNoticeUser"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllRespCloseServer msgid=1066292141 msgtype="*smsg.AdAllRespCloseServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomJoin msgid=4046131125 msgtype="*cmsg.CReqRoomJoin"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomSettingChange msgid=881734558 msgtype="*cmsg.SRespRoomSettingChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomSettingChange msgid=1733615467 msgtype="*cmsg.CReqRoomSettingChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomQuickJoin msgid=3341030166 msgtype="*cmsg.SRespRoomQuickJoin"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomQuickJoin msgid=2089303536 msgtype="*cmsg.CReqRoomQuickJoin"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespRoomCreate msgid=1710018385 msgtype="*cmsg.SRespRoomCreate"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqRoomCreate msgid=105188656 msgtype="*cmsg.CReqRoomCreate"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.NoticeSessionClosed msgid=3986803022 msgtype="*smsg.NoticeSessionClosed"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllRespPingServer msgid=1303510361 msgtype="*smsg.AdAllRespPingServer"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespMyRoom msgid=2192867462 msgtype="*cmsg.SRespMyRoom"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.EsAllNtfUserBrief msgid=585601477 msgtype="*smsg.EsAllNtfUserBrief"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AllEnRespUserInfo msgid=2454541533 msgtype="*smsg.AllEnRespUserInfo"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AdAllRespMetrics msgid=3914334786 msgtype="*smsg.AdAllRespMetrics"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-4 module=netframe svrid=601 svrtype=6
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqMyRoom msgid=1354887313 msgtype="*cmsg.CReqMyRoom"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AsAllRespMSGMonitor msgid=2184582410 msgtype="*smsg.AsAllRespMSGMonitor"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="App (admin) running..." id=1101
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=601 svrtype=6
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=1501 svrtype=15
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeChatMsg msgid=3575122792 msgtype="*cmsg.SNoticeChatMsg"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespChat msgid=4147781737 msgtype="*cmsg.SRespChat"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.ServerNotice msgid=3487801058 msgtype="*cmsg.ServerNotice"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SReqGMCommand msgid=1395168117 msgtype="*cmsg.SReqGMCommand"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-5 module=netframe svrid=1101 svrtype=11
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=1101 svrtype=11
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=501 svrtype=5
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqGMCommand msgid=1151522061 msgtype="*cmsg.CReqGMCommand"
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncPlayerState msgid=3917193749 msgtype="*cmsg.SSyncPlayerState"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.RespResponseTest msgid=1169157074 msgtype="*smsg.RespResponseTest"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespGameExit msgid=3784674525 msgtype="*cmsg.SRespGameExit"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqGameExit msgid=4127351624 msgtype="*cmsg.CReqGameExit"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespCancelCurOpt msgid=1981333942 msgtype="*cmsg.SRespCancelCurOpt"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespOpt msgid=2051993176 msgtype="*cmsg.SRespOpt"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeGameOver msgid=2625459294 msgtype="*cmsg.SNoticeGameOver"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncGameBoard msgid=1064935867 msgtype="*cmsg.SSyncGameBoard"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncHandCard msgid=3280378704 msgtype="*cmsg.SSyncHandCard"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncCamp msgid=2409734617 msgtype="*cmsg.SSyncCamp"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncUseSkill msgid=893538746 msgtype="*cmsg.SSyncUseSkill"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaRespLookGame msgid=793714495 msgtype="*smsg.LoGaRespLookGame"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncCard msgid=3162981465 msgtype="*cmsg.SSyncCard"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncAct msgid=1388291284 msgtype="*cmsg.SSyncAct"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ServerNotice msgid=555145359 msgtype="*smsg.ServerNotice"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespAct msgid=1408564393 msgtype="*cmsg.SRespAct"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeOp msgid=2809268904 msgtype="*cmsg.SNoticeOp"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeDrawCard msgid=3886032752 msgtype="*cmsg.SNoticeDrawCard"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=601 svrtype=6
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.EnLoRawMessage msgid=1976044175 msgtype="*smsg.EnLoRawMessage"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeEnterPhase msgid=1704022358 msgtype="*cmsg.SNoticeEnterPhase"
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=1501 loadLevel=5 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.NtfGameStateChange msgid=2161281135 msgtype="*smsg.NtfGameStateChange"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.LoGaRespUserQuit msgid=345564823 msgtype="*smsg.LoGaRespUserQuit"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeGameStart msgid=2119850262 msgtype="*cmsg.SNoticeGameStart"
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=501 loadLevel=10 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespSceneReady msgid=3036653091 msgtype="*cmsg.SRespSceneReady"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqSceneReady msgid=3612763202 msgtype="*cmsg.CReqSceneReady"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespGameScene msgid=2686955708 msgtype="*cmsg.SRespGameScene"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SNoticeGameReady msgid=3427748855 msgtype="*cmsg.SNoticeGameReady"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespMyData msgid=2091323817 msgtype="*cmsg.SRespMyData"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqMyData msgid=2933023166 msgtype="*cmsg.CReqMyData"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.CReqPing msgid=634761767 msgtype="*cmsg.CReqPing"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SSyncUserBrief msgid=3976127548 msgtype="*cmsg.SSyncUserBrief"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespLogin msgid=3334120681 msgtype="*cmsg.SRespLogin"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=1101 svrtype=11
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=301 loadLevel=15 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=501 loadLevel=20 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=301 loadLevel=25 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=cmsg.SRespPing msgid=2336998329 msgtype="*cmsg.SRespPing"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="App (lobby) running..." id=401
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="initGateMsgRoute !!!!!!!!!"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=601 loadLevel=30 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="initGateMsgHandler !!!!!!!!!"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.SSChannelBroadcast msgid=2419686631 msgtype="*smsg.SSChannelBroadcast"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AllGaNtfKickUserOut msgid=3761147651 msgtype="*smsg.AllGaNtfKickUserOut"
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.ReqResponseTest msgid=776684762 msgtype="*smsg.ReqResponseTest"
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-6 module=netframe svrid=401 svrtype=4
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=401 svrtype=4
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=301 loadLevel=35 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=301 loadLevel=40 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=601 loadLevel=45 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=1101 loadLevel=50 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=1501 loadLevel=55 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=1101 loadLevel=60 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="正在连接 kafka" url="[10.225.254.248:9092]"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=501 loadLevel=65 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="ServerInfos Update 301 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=501 loadLevel=70 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.AsAllReqMSGMonitor msgid=529602549 msgtype="*smsg.AsAllReqMSGMonitor"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Connect start" addr="127.0.0.1:4000" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=601 loadLevel=75 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=1101 loadLevel=80 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=601 loadLevel=85 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=401 svrtype=4
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="ServerInfos Update 501 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=1501 loadLevel=90 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet Listen start" addr="0.0.0.0:8002" module=netframe
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=1101 loadLevel=95 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="App (gate1) running..." id=201
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=MasterServer-7 module=netframe svrid=201 svrtype=2
+time="2021-12-26T20:54:36+08:00" level=debug msg=RegisterMessage msgName=smsg.SyncServerVersion msgid=1742032674 msgtype="*smsg.SyncServerVersion"
+time="2021-12-26T20:54:36+08:00" level=info msg="MetaNet OnConnect" local=master-1 module=netframe svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Connect Master Succeed." module=netcluster svrid=101 svrtype=1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave Connected, wait for config check" module=netcluster svrid=201 svrtype=2
+time="2021-12-26T20:54:36+08:00" level=info msg="Reload config File no change" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=1501 loadLevel=100 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=401 loadLevel=105 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=301 loadLevel=110 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=401 loadLevel=115 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=401 loadLevel=120 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=401 loadLevel=125 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=501 loadLevel=130 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=401 loadLevel=135 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=601 loadLevel=140 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=1101 loadLevel=145 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="ServerInfos Update 401 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. lobby,401 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. auth,301 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> auth,301" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Master] Slave 连接成功." module=netcluster svrid=201 svrtype=2
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. entity,501 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=301 svrtype=3 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. admin,1101 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. account,1501 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. game1,601 ---101---> gate1,201" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> lobby,401" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=1501 loadLevel=150 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=501 aname=entity bid=201 loadLevel=155 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=301 loadLevel=160 master=101 module=netcluster nname=auth
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1501 aname=account bid=201 loadLevel=165 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=601 aname=game1 bid=201 loadLevel=170 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=1101 aname=admin bid=201 loadLevel=175 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=201 svrtype=2 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=301 aname=auth bid=201 loadLevel=180 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=401 aname=lobby bid=201 loadLevel=185 master=101 module=netcluster nname=gate1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=401 loadLevel=190 master=101 module=netcluster nname=lobby
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=401 svrtype=4 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> entity,501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=501 loadLevel=195 master=101 module=netcluster nname=entity
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=501 svrtype=5 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> game1,601" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=601 svrtype=6 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> admin,1101" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1101 svrtype=11 working=true
+time="2021-12-26T20:54:36+08:00" level=info msg="[Fix]连接. gate1,201 ---101---> account,1501" module=netcluster
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=601 loadLevel=200 master=101 module=netcluster nname=game1
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=1101 loadLevel=205 master=101 module=netcluster nname=admin
+time="2021-12-26T20:54:36+08:00" level=info msg="[FixM]连接" aid=201 aname=gate1 bid=1501 loadLevel=210 master=101 module=netcluster nname=account
+time="2021-12-26T20:54:36+08:00" level=info msg="[Slave] Other Slave Server Status." connected=true module=netcluster svrid=1501 svrtype=15 working=true
+time="2021-12-26T20:54:37+08:00" level=info msg="MetaNet OnConnect" local=gate1-1 module=netframe svrid=100001 svrtype=0
+time="2021-12-26T20:54:39+08:00" level=debug msg="User req login" session=133542885558683297 ticket=1
+time="2021-12-26T20:54:39+08:00" level=debug msg="Cache Get load 1000000666"
+time="2021-12-26T20:54:39+08:00" level=debug msg="User login succ" session=133542885558683297 userid=1000000666
+time="2021-12-26T20:54:39+08:00" level=info msg="ServerInfos Update 501 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:39+08:00" level=info msg="ServerInfos Update 301 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:39+08:00" level=info msg="ServerInfos Update 401 LoadAI [] LoadGame [] UnloadAI map[] UnloadGame map[] UnloadSvr map[]"
+time="2021-12-26T20:54:42+08:00" level=info msg="MetaNet OnConnect" local=gate1-2 module=netframe svrid=100002 svrtype=0
+time="2021-12-26T20:54:43+08:00" level=debug msg="User req login" session=133542885558683298 ticket=2
+time="2021-12-26T20:54:43+08:00" level=debug msg="Cache Get load 1000000674"
+time="2021-12-26T20:54:43+08:00" level=debug msg="User login succ" session=133542885558683298 userid=1000000674
+time="2021-12-26T20:54:46+08:00" level=debug msg="Bind session to server" session=133542885558683297 svrid=601 svrtype=6 userid=1000000666
+time="2021-12-26T20:54:46+08:00" level=debug msg="Bind session to server" session=133542885558683298 svrid=601 svrtype=6 userid=1000000674
+time="2021-12-26T20:54:46+08:00" level=debug msg="进入准备阶段"
+time="2021-12-26T20:54:46+08:00" level=debug msg="New Game succ"  node : =601 GameID=1640523286040100000
+time="2021-12-26T20:54:46+08:00" level=debug msg="进入开始阶段"
+time="2021-12-26T20:54:49+08:00" level=debug msg="进入初始牌准备阶段"
+time="2021-12-26T20:54:49+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T20:54:49+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T20:54:58+08:00" level=info msg="触发被动技：突袭"
+time="2021-12-26T20:55:00+08:00" level=info msg="触发被动技：突袭"
+time="2021-12-26T20:55:03+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T20:55:03+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T20:55:03+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T20:55:03+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T20:55:07+08:00" level=info msg="触发被动技：突袭"
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn read message error" error="read tcp 10.225.22.191:8002->10.225.22.191:58141: wsarecv: An existing connection was forcibly closed by the remote host." module=network name=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="gate1-1Conn exit read loop" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn Close start" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn close succeed" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn Close start succeed" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn WriteLoop exit loop" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="gate1-1 Conn exit write loop" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=debug msg="Conn closeConn succeed" conn=gate1-1
+time="2021-12-26T20:56:47+08:00" level=info msg="MetaNet onClose" local=gate1-1 module=netframe svrid=100001 svrtype=0
+time="2021-12-26T20:56:47+08:00" level=debug msg="SetLogoutTime 1000000666 2021-12-26 20:56:47"
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn read message error" error="read tcp 10.225.22.191:8002->10.225.22.191:58145: wsarecv: An existing connection was forcibly closed by the remote host." module=network name=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="gate1-2Conn exit read loop" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn Close start" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn close succeed" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn Close start succeed" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn WriteLoop exit loop" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="gate1-2 Conn exit write loop" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=debug msg="Conn closeConn succeed" conn=gate1-2
+time="2021-12-26T20:56:48+08:00" level=info msg="MetaNet onClose" local=gate1-2 module=netframe svrid=100002 svrtype=0
+time="2021-12-26T20:56:48+08:00" level=debug msg="SetLogoutTime 1000000674 2021-12-26 20:56:48"
+time="2021-12-26T21:11:47+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T21:11:47+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T21:11:47+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T21:11:47+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T21:28:27+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T21:28:27+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T21:28:27+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T21:28:27+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T21:45:07+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T21:45:07+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T21:45:07+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T21:45:07+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T22:01:47+08:00" level=debug msg="Cache Expire delete 1000000666"
+time="2021-12-26T22:01:47+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T22:01:47+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T22:01:47+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T22:01:47+08:00" level=debug msg="进入补牌阶段"
+time="2021-12-26T22:01:48+08:00" level=debug msg="Cache Expire delete 1000000674"
+time="2021-12-26T22:18:27+08:00" level=debug msg="进入回合结束阶段"
+time="2021-12-26T22:18:27+08:00" level=info msg="无效Buff清除完成！  无效：buff过期或者buff次数用尽"
+time="2021-12-26T22:18:27+08:00" level=debug msg="进入回合开始阶段"
+time="2021-12-26T22:18:27+08:00" level=debug msg="进入补牌阶段"
