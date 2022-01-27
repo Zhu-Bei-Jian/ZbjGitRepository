@@ -2,15 +2,16 @@ package game
 
 import (
 	"fmt"
+	"net"
+	"strconv"
+	"strings"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/sirupsen/logrus"
 	"github.com/wanghuiyt/ding"
-	"net"
 	"sanguosha.com/sgs_herox/gameutil"
 	"sanguosha.com/sgs_herox/proto/cmsg"
 	gamedef "sanguosha.com/sgs_herox/proto/def"
-	"strconv"
-	"strings"
 )
 
 //工具文件
@@ -453,22 +454,47 @@ func DingSendMsgTestToTakeMyLord(info string) {
 
 }
 
+func whoAmI() string {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		fmt.Println(err)
+		return "nobody"
+	}
+	for _, address := range addrs {
+		// 检查ip地址判断是否回环地址
+		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				//fmt.Println(ipnet.IP.String())
+				ad := ipnet.IP.String()
+				if ad == "10.225.22.191" {
+					return "zhubeijian"
+				} else if ad == "10.225.254.248" {
+					return "ceshifu"
+				} else {
+					return "zhengshifu"
+				}
+			}
+		}
+	}
+	return "nobody"
+}
+
 func (p *GameBase) DingSendMsg(info string) {
 	at := AhoCorasick.Query(p.players[0].user.userBrief.Nickname + p.players[1].user.userBrief.Nickname)
-	if IsZbj() {
-		(&ding.Webhook{
-			AccessToken: "e853c6d35234f07208ef02fd00e8555ba6046b2df50218ee8964e78fb9070435",
-			Secret:      "SEC64d0d6b7ee4fccb9e69ff18432b91b5bf176adbe6cabc8c2492b345e50ac997e",
-			EnableAt:    true,
-		}).SendMessage(info, at...)
-	} else {
-		(&ding.Webhook{
-			AccessToken: "86871fa45f066b38b6d0b779f5cb151b0221bd0f8311ad194006c095576b4b56",
-			Secret:      "SECd97a494654ad4d8ab939ae496a28b491784ca2dc7253b1b769487456a31dd26b",
-			EnableAt:    true,
-		}).SendMessage(info, at...)
-	}
 
+	var ding = &ding.Webhook{EnableAt: true}
+	switch whoAmI() {
+	case "zhubeijian":
+		ding.AccessToken = "e853c6d35234f07208ef02fd00e8555ba6046b2df50218ee8964e78fb9070435"
+		ding.Secret = "SEC64d0d6b7ee4fccb9e69ff18432b91b5bf176adbe6cabc8c2492b345e50ac997e"
+	case "ceshifu":
+		ding.AccessToken = "86871fa45f066b38b6d0b779f5cb151b0221bd0f8311ad194006c095576b4b56"
+		ding.Secret = "SECd97a494654ad4d8ab939ae496a28b491784ca2dc7253b1b769487456a31dd26b"
+	case "zhengshifu":
+		ding.AccessToken = "40ddd5547d060e773756a3748350f9002799ead669181319c1f559e72a9c9fba"
+		ding.Secret = "SEC8985298d5292f34289424e1184be6d0176f3f6ff45229b81782e25b25794b11c"
+	}
+	ding.SendMessage(info, at...)
 }
 
 func (p *Player) Log(info string) {
