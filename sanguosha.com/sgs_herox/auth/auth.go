@@ -1,105 +1,68 @@
-package auth
+package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/sirupsen/logrus"
+	"io/ioutil"
 	"net/http"
-	"sanguosha.com/baselib/appframe"
-	wordsfilter "sanguosha.com/baselib/sgslib/filter"
-	"sanguosha.com/baselib/util"
-	"sanguosha.com/sgs_herox/gameshared"
-	"sanguosha.com/sgs_herox/gameshared/config"
-	"sanguosha.com/sgs_herox/gameshared/config/conf"
-	"sanguosha.com/sgs_herox/gameshared/entityservice"
-	"sanguosha.com/sgs_herox/gameshared/logproducer"
-	"sanguosha.com/sgs_herox/gameshared/manager"
-	"sanguosha.com/sgs_herox/gameshared/serverstateservice"
-
-	_ "net/http/pprof"
+	"reflect"
+	"strings"
 )
 
-var wordsFilter wordsfilter.Filter
-
-var authApp *appframe.Application
-var logMgr *logproducer.LogManager
-var workerMgr *manager.WorkerManager
-
-var gameConfig *conf.GameConfig
-var entityMgr entityservice.EntityService
-var dbDao *database
-
-var serverStateService serverstateservice.ServerStateService
-var serverInfos *gameshared.ServerInfos
-
-var ServerOpenTime int64
-var ServerCloseTime int64
-var InnerIp []string
-var ApkVersion string
-
-var tableParkCfg config.TablePark
-
-// InitAuthSvr 初始化 authsvr 服务
-func InitAuthSvr(app *appframe.Application, cfgFile string) error {
-	//远程获取pprof数据
-	util.SafeGo(func() {
-		err := http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", 20000+app.ID()), nil)
-		if err != nil {
-			logrus.WithError(err).Error("pprof listen error")
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "-------------received")
+	defer r.Body.Close()
+	body, _ := ioutil.ReadAll(r.Body)
+	var mp = make(map[string]interface{})
+	json.Unmarshal(body, &mp)
+	//fmt.Println(string(body))
+	var raw_msg string
+	var IsGroup = false
+	for key := range mp {
+		switch key {
+		case "raw_message":
+			//raw_msg = *mp[key].(*string)
+			//fmt.Println(mp[key])
+			//fmt.Println(reflect.TypeOf(mp[key]), reflect.ValueOf(mp[key]))
+			raw_msg = reflect.ValueOf(mp[key]).String()
+			//fmt.Println(raw_msg)
+			//LogToQQ("收到")
+		case "message_type":
+			if reflect.ValueOf(mp[key]).String() == "group" {
+				IsGroup = true
+			}
 		}
-	})
 
-	cfg, err := config.LoadConfig(cfgFile)
-	if err != nil {
-		return err
+	}
+	//fmt.Println(raw_msg)
+	if IsGroup {
+		fmt.Println(raw_msg)
+		go LogToQQ("我收到了你说的话 ： " + raw_msg)
 	}
 
-	tableParkCfg = cfg.TablePark
-
-	dbDao, err = NewDatabase(cfg.DBGame)
-	if err != nil {
-		return fmt.Errorf("NewDataBase error:%w", err)
-	}
-
-	app.SetMsgHandlerWorker(appframe.NewParallelWorker(0, true))
-	workerMgr = &manager.WorkerManager{}
-	workerMgr.Init(app)
-
-	reportMgr, err := manager.NewReportManager(cfg, app)
-	if err != nil {
-		return err
-	}
-
-	app.OnFiniHandler(func() {
-		reportMgr.Close()
-	})
-
-	//服务器状态信息
-	serverStateService = serverstateservice.Init(app)
-	serverInfos = serverStateService.GetServerInfos()
-	serverStateService.OnServerInfoUpdate(onServerInfoUpdate)
-
-	logMgr, err = logproducer.New(cfg, app.ID())
-	if err != nil {
-		return err
-	}
-
-	c := manager.NewCronMgr()
-	c.AddAppStatusPushJob(app, reportMgr)
-	c.Start()
-	app.OnFiniHandler(func() {
-		c.Stop()
-	})
-
-	gameshared.RegisterCommonCommand(app)
-	gameshared.RegisterCommonServerStatus(app, reportMgr.PushServerStatus)
-
-	initAuthMsgHandler(app)
-	app.OnFiniHandler(Finish)
-
-	workerMgr.Run()
-	return nil
 }
 
-func Finish() {
-	workerMgr.Close()
+func main() {
+	http.HandleFunc("/", IndexHandler)
+	http.ListenAndServe("10.225.22.191:5701", nil)
+}
+func LogToQQ(info string) {
+	//qq机器人 - 参考go-cqhttp框架 https://docs.go-cqhttp.org/
+	//将日志 post 至 云服务器上的QQClient ，由 QQClient 发送至QQ群
+	//764601511  M6项目组玩家内测QQ群号
+	//696331693  Test go-cqhttp
+	url := "http://127.0.0.1:5700/send_group_msg"
+	s := "{\"group_id\":\"696331693\",\"message\":\"" + info + "\"}"
+	resp, err := http.Post(url, "application/json; charset=utf-8", strings.NewReader(s))
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		//handle error
+	}
+	fmt.Println("body:" + string(body))
 }
