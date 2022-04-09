@@ -3,7 +3,8 @@ package lobby
 import (
 	"github.com/pkg/errors"
 	"sanguosha.com/sgs_herox/gameutil"
-	"sanguosha.com/sgs_herox/proto/def"
+	gamedef "sanguosha.com/sgs_herox/proto/def"
+
 	"sanguosha.com/sgs_herox/proto/gameconf"
 )
 

@@ -19,11 +19,7 @@ func Error(format string, params ...interface{}) { logrus.Errorf(format, params.
 // Warning 已废弃
 func Warning(format string, params ...interface{}) { logrus.Warningf(format, params...) }
 
-// Notice 已废弃
-func Notice(format string, params ...interface{}) { logrus.Infof(format, params...) }
 
-// Informational 已废弃
-func Informational(format string, params ...interface{}) { logrus.Infof(format, params...) }
 
 // Debug 已废弃
 func Debug(format string, params ...interface{}) { logrus.Debugf(format, params...) }

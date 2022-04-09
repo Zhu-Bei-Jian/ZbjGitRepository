@@ -8,7 +8,7 @@ appid: 100
 game_area: 191
 
 # mysql 配置, DSN 格式 user:password@tcp(localhost:3306)/db
-db_game: "root:zhubeijian@tcp(localhost:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
+db_game: "root:ZBJzbj123@tcp(localhost:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
 #db_game: "root:zhubeijian@tcp(10.225.254.248:3306)/sgs_spy?charset=utf8&parseTime=True&loc=Local"
 #db_game: "root:yk123456@tcp(127.0.0.1:3306)/sgs_herox?charset=utf8&parseTime=True&loc=Local"
 db_account : ""

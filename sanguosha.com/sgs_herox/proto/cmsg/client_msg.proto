@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-
+option go_package="sanguosha.com/sgs_herox/proto/cmsg";
 // 客户端与服务端交互协议
 
 package cmsg;
@@ -19,11 +19,13 @@ message SRespPing {
     int32 svrType = 2;
 }
 
-// 请求登陆.
-message CReqLogin {
-    string ticket = 1;
-    gameconf.AccountLoginTyp loginType = 2;//登录类型 1，测试 2，桌上学院
+//请求登录
+message CReqLogin{
+    string account = 1;
+    string password = 2;
     string version = 3;
+    string ticket = 4;
+    gameconf.AccountLoginTyp loginType =5;
 }
 
 // 响应登陆请求.
@@ -335,7 +337,12 @@ message SSyncCamp{
     enum ChangeType{
         None = 0;
         HP = 1;
-        Buff = 2;
+        Attack = 2;
+        WeaponAttack = 3;
+        WeaponDurability = 4;
+        Armor = 5;
+        Crystal = 6;
+        CrystalLimit = 7;
     }
 
     message Change{

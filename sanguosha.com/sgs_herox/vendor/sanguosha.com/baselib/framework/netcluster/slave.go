@@ -286,20 +286,20 @@ func (s *Slave) SendClientBytes(ID uint32, msgid uint32, bytes []byte, extend ne
 
 // SendServerMsg serverID:目标服务器
 func (s *Slave) SendServerMsg(msg interface{},extend netframe.Server_Extend) error {
-	//if s.DebugPrintMessage {
-	//	if extend.SessionId != 0 {
-	//		logger.WithFields(logrus.Fields{
-	//			"svrid":   extend.ServerId,
-	//			"session": extend.SessionId,
-	//			"msg":     fmt.Sprintf("%#v", msg),
-	//		}).Debug("Send msg to session")
-	//	} else {
-	//		logger.WithFields(logrus.Fields{
-	//			"svrid": extend.ServerId,
-	//			"msg":   fmt.Sprintf("%#v", msg),
-	//		}).Debug("Send msg to server")
-	//	}
-	//}
+	if s.DebugPrintMessage {
+		if extend.SessionId != 0 {
+			logger.WithFields(logrus.Fields{
+				"svrid":   extend.ServerId,
+				"session": extend.SessionId,
+				"msg":     fmt.Sprintf("%#v", msg),
+			}).Debug("Send msg to session")
+		} else {
+			logger.WithFields(logrus.Fields{
+				"svrid": extend.ServerId,
+				"msg":   fmt.Sprintf("%#v", msg),
+			}).Debug("Send msg to server")
+		}
+	}
 
 	//直接序列化
 	msgid, data, err1 := msgprocessor.OnMarshal(msg)
@@ -525,16 +525,16 @@ func (s *Slave) ListenServerMessage(serverType uint32, msg interface{}, message 
 				s.svrmutex.RUnlock()
 				if s.DebugPrintMessage {
 					if extend.SessionId != 0 {
-						//logger.WithFields(logrus.Fields{
-						//	"svrid":   extend.ServerId,
-						//	"session": extend.SessionId,
-						//	"msg":     fmt.Sprintf("%#v", cmsg),
-						//}).Debug("Msg from session")
+						logger.WithFields(logrus.Fields{
+							"svrid":   extend.ServerId,
+							"session": extend.SessionId,
+							"msg":     fmt.Sprintf("%#v", cmsg),
+						}).Debug("Msg from session")
 					} else {
-						//logger.WithFields(logrus.Fields{
-						//	"svrid": extend.ServerId,
-						//	"msg":   fmt.Sprintf("%#v", cmsg),
-						//}).Debug("Msg from server")
+						logger.WithFields(logrus.Fields{
+							"svrid": extend.ServerId,
+							"msg":   fmt.Sprintf("%#v", cmsg),
+						}).Debug("Msg from server")
 					}
 				}
 				message(cID, cServerType,msgId,msgData, cmsg,extend)

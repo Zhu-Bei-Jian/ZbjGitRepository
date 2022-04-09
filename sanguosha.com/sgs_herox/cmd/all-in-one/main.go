@@ -12,8 +12,6 @@ import (
 	"sanguosha.com/baselib/framework/netcluster"
 	"sanguosha.com/baselib/log"
 	"sanguosha.com/baselib/util"
-	"sanguosha.com/sgs_herox/admin"
-	"sanguosha.com/sgs_herox/auth"
 	"sanguosha.com/sgs_herox/entity"
 	"sanguosha.com/sgs_herox/game"
 	"sanguosha.com/sgs_herox/gameutil"
@@ -156,20 +154,6 @@ func main() {
 			app.Run()
 		}()
 	}
-	// auth
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		app, err := appframe.NewApplication(*netconfigFile, findOneNode(authName))
-		if err != nil {
-			logrus.WithField("name", authName).WithError(err).Panic("New auth app fail")
-		}
-		err = auth.InitAuthSvr(app, *appconfigFile)
-		if err != nil {
-			logrus.WithField("name", authName).WithError(err).Panic("Init authsvr fail")
-		}
-		app.Run()
-	}()
 
 	//lobby
 	wg.Add(1)
@@ -219,24 +203,6 @@ func main() {
 			app.Run()
 		}()
 	}
-
-	// admin
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		app, err := appframe.NewApplication(*netconfigFile, findOneNode(adminName))
-		if err != nil {
-			logrus.WithField("name", adminName).WithError(err).Panic("New admin app fail")
-		}
-		err = admin.InitAdmin(app, *appconfigFile, fmt.Sprintf("0.0.0.0:%d", adminPort), *WebRoot)
-		if err != nil {
-			logrus.WithField("name", adminName).WithError(err).Panic("Init admin server fail")
-		}
-		app.Run()
-	}()
-	//if !game.IsZbj() {
-	//	game.DingSendMsgTestToTakeMyLord(fmt.Sprintf("Hello，我是机器人小钉。%v,测试服更新，现已完成重启", time.Now().UTC().Local()))
-	//}
 
 	wg.Wait()
 }

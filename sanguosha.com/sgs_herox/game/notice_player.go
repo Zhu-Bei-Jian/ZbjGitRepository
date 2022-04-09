@@ -48,8 +48,7 @@ func SyncPlayerState(player *Player, state cmsg.SSyncPlayerState_ChangeType) {
 func SyncCampChangeBuff(p *Player, spellCard *Card) {
 	p.game.Send2All(&cmsg.SSyncCamp{
 		Changes: []*cmsg.SSyncCamp_Change{{
-			ChangeType: cmsg.SSyncCamp_Buff,
-			NewBuffs:   p.BuffManager.ToDef(),
+			NewBuffs: p.BuffManager.ToDef(),
 		}},
 		SeatId:    p.GetSeatID(),
 		SpellCard: spellCard.ID(),

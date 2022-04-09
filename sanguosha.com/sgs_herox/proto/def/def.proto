@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 // 共同的基础定义
-
+option go_package="sanguosha.com/sgs_herox/proto/def";
 package gamedef;
 
 import "sanguosha.com/sgs_herox/proto/gameconf/game_type.proto";

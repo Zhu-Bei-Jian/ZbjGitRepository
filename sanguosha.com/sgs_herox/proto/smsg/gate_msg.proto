@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+option go_package="sanguosha.com/sgs_herox/proto/smsg";
 package smsg;
 
 import "sanguosha.com/sgs_herox/proto/def/def.proto";

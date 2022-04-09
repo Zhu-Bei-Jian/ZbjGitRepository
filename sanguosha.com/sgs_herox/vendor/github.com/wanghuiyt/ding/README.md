@@ -6,13 +6,12 @@
 
 ### 安装
 
+`go get -u github.com/wanghuiyt/ding`
+
 钉钉群机器人设置为 "加签" 验证 ([如何开启钉钉群机器人](HOWTO.md))
 
-```
-go get -u github.com/wanghuiyt/ding
-```
+<br/><br/>
 
-<br/>
 
 ### 例子
 
@@ -31,7 +30,7 @@ err := d.SendMessage("这是普通的群消息")
 
 Done!
 
-<br/>
+<br/><br/>
 
 
 ### 使用
